@@ -9,7 +9,7 @@
  */
 
 declare(strict_types=1);
-namespace KiwiSuite\Translation;
+namespace KiwiSuite\Translation\Metadata;
 
 use Doctrine\DBAL\Types\Type;
 use KiwiSuite\CommonTypes\Entity\UuidType;

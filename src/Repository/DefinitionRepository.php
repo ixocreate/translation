@@ -13,8 +13,8 @@ namespace KiwiSuite\Translation\Repository;
 
 use KiwiSuite\Database\Repository\AbstractRepository;
 use Doctrine\ORM\Mapping\Builder\ClassMetadataBuilder;
-use KiwiSuite\Translation\DefinitionMetadata;
 use KiwiSuite\Translation\Entity\Definition;
+use KiwiSuite\Translation\Metadata\DefinitionMetadata;
 
 final class DefinitionRepository extends AbstractRepository
 {

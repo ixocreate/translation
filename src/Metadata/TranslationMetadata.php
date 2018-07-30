@@ -9,7 +9,7 @@
  */
 
 declare(strict_types=1);
-namespace KiwiSuite\Translation;
+namespace KiwiSuite\Translation\Metadata;
 
 use KiwiSuite\CommonTypes\Entity\UuidType;
 use KiwiSuite\Database\ORM\Metadata\AbstractMetadata;

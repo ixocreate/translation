@@ -43,13 +43,6 @@ final class DatabaseLoader implements LoaderInterface
      */
     public function load($resource, $locale, $domain = 'messages')
     {
-        $messages = [];
-
-        $result = $this->translationRepository->loadTranslations($locale, $domain);
-        foreach ($result as $translation) {
-            $messages[$translation->name] = $translation->message;
-        }
-
-        return new MessageCatalogue($locale, $messages);
+        return new MessageCatalogue($locale, $this->translationRepository->loadTranslations($locale, $domain));
     }
 }

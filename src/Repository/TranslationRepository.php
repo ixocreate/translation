@@ -11,15 +11,13 @@
 declare(strict_types=1);
 namespace KiwiSuite\Translation\Repository;
 
-use Doctrine\Common\Collections\Criteria;
 use Doctrine\ORM\Query;
 use Doctrine\ORM\Query\Expr\Join;
 use KiwiSuite\Database\Repository\AbstractRepository;
 use Doctrine\ORM\Mapping\Builder\ClassMetadataBuilder;
-use KiwiSuite\Entity\Collection\ArrayCollection;
 use KiwiSuite\Translation\Entity\Definition;
 use KiwiSuite\Translation\Entity\Translation;
-use KiwiSuite\Translation\TranslationMetadata;
+use KiwiSuite\Translation\Metadata\TranslationMetadata;
 
 final class TranslationRepository extends AbstractRepository
 {
@@ -36,16 +34,26 @@ final class TranslationRepository extends AbstractRepository
         $metadata = (new TranslationMetadata($builder));
     }
 
-    public function loadTranslations(string $locale, string $catalogue): ArrayCollection
+    public function loadTranslations(string $locale, string $catalogue): array
     {
         $queryBuilder = $this->createSelectQueryBuilder('t');
         $queryBuilder->join(Definition::class, 'd', Join::WITH, 'd.id = t.definitionId');
-        $queryBuilder->addSelect(['d.name']);
-        $queryBuilder->andWhere(Criteria::expr()->eq('d.locale', $locale));
-        $queryBuilder->andWhere(Criteria::expr()->eq('d.catalogue', $catalogue));
+        $queryBuilder->addSelect(['d.name', 'd.catalogue']);
+        $queryBuilder->andWhere('t.locale = :locale');
+        $queryBuilder->setParameter("locale", $locale);
+        $queryBuilder->andWhere("d.catalogue = :catalogue");
+        $queryBuilder->setParameter("catalogue", $catalogue);
 
-        return new ArrayCollection($queryBuilder->getQuery()->getResult(Query::HYDRATE_SCALAR), function ($definition) {
-            return (string) $definition->id();
-        });
+        $result = $queryBuilder->getQuery()->getResult(Query::HYDRATE_SCALAR);
+        $translations = [];
+
+        foreach ($result as $item) {
+            if (!isset($translations[$item['catalogue']])) {
+                $translations[$item['catalogue']] = [];
+            }
+            $translations[$item['catalogue']][$item['name']] = $item['t_message'];
+        }
+
+        return $translations;
     }
 }
