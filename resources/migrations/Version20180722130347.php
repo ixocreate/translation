@@ -26,7 +26,7 @@ class Version20180722130347 extends AbstractMigration
         $table->addColumn("id", UuidType::class);
         $table->addColumn("definitionId", UuidType::class);
         $table->addColumn("locale", Type::STRING);
-        $table->addColumn("message", Type::STRING)->setNotnull(false);
+        $table->addColumn("message", Type::TEXT)->setNotnull(false);
         $table->setPrimaryKey(["id"]);
         $table->addForeignKeyConstraint('translation_definition', ['definitionId'], ['id'], ["onDelete" => "CASCADE"]);
         $table->addUniqueIndex(["definitionId", "locale"]);

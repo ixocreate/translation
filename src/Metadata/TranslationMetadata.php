@@ -39,7 +39,7 @@ final class TranslationMetadata extends AbstractMetadata
 
         $this->setFieldBuilder(
             'message',
-            $builder->createField('message', 'string')
+            $builder->createField('message', 'text')
         )->build();
     }
 }
