@@ -31,7 +31,6 @@ final class DefinitionMetadata extends AbstractMetadata
         $this->setFieldBuilder(
             'name',
             $builder->createField('name', 'string')
-                ->makePrimaryKey()
         )->build();
 
         $this->setFieldBuilder(
