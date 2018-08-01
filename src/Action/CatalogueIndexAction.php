@@ -43,8 +43,9 @@ final class CatalogueIndexAction implements MiddlewareInterface
     {
         $queryBuilder = $this->definitionRepository->createQueryBuilder();
         $queryBuilder->from(Definition::class, 'd');
-        $queryBuilder->select($queryBuilder->expr()->countDistinct('d.catalogue') . ' AS count');
+        $queryBuilder->select($queryBuilder->expr()->count('d.catalogue') . ' AS count');
         $queryBuilder->addSelect('d.catalogue');
+        $queryBuilder->groupBy('d.catalogue');
 
         $catalogue = [];
         $result = $queryBuilder->getQuery()->getResult();
