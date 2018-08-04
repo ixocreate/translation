@@ -1,4 +1,14 @@
 <?php
+/**
+ * kiwi-suite/translation (https://github.com/kiwi-suite/translation)
+ *
+ * @package kiwi-suite/translation
+ * @link https://github.com/kiwi-suite/translation
+ * @copyright Copyright (c) 2010 - 2018 kiwi suite GmbH
+ * @license MIT License
+ */
+
+declare(strict_types=1);
 namespace KiwiSuite\Translation\Action;
 
 use Doctrine\ORM\Query\Expr\Join;
@@ -50,8 +60,6 @@ final class CatalogueIndexAction implements MiddlewareInterface
         $catalogue = [];
         $result = $queryBuilder->getQuery()->getResult();
         foreach ($result as $item) {
-
-
             $count = (int) $item['count'];
             if (empty($count)) {
                 continue;
@@ -61,7 +69,7 @@ final class CatalogueIndexAction implements MiddlewareInterface
             foreach ($this->localeManager->all() as $localeItem) {
                 $intl[$localeItem['locale']] = [
                     'locale' => $localeItem['locale'],
-                    'country' => strtolower(\Locale::getRegion($localeItem['locale'])),
+                    'country' => \mb_strtolower(\Locale::getRegion($localeItem['locale'])),
                     'count' => 0,
                 ];
             }
@@ -69,7 +77,7 @@ final class CatalogueIndexAction implements MiddlewareInterface
             $queryBuilder = $this->definitionRepository->createQueryBuilder();
             $queryBuilder->from(Translation::class, 't');
             $queryBuilder->select($queryBuilder->expr()->count('t.id') . ' AS count', "t.locale");
-            $queryBuilder->innerJoin(Definition::class, 'd', Join::WITH , 'd.id = t.definitionId');
+            $queryBuilder->innerJoin(Definition::class, 'd', Join::WITH, 'd.id = t.definitionId');
             $queryBuilder->orWhere($queryBuilder->expr()->isNotNull("t.message"));
             $queryBuilder->orWhere($queryBuilder->expr()->neq("t.message", ":empty"));
             $queryBuilder->setParameter("empty", "");
@@ -79,7 +87,7 @@ final class CatalogueIndexAction implements MiddlewareInterface
 
             $catalogueResult = $queryBuilder->getQuery()->getResult();
             foreach ($catalogueResult as $catalogueItem) {
-                if (!array_key_exists($catalogueItem['locale'], $intl)) {
+                if (!\array_key_exists($catalogueItem['locale'], $intl)) {
                     continue;
                 }
 
@@ -89,7 +97,7 @@ final class CatalogueIndexAction implements MiddlewareInterface
             $catalogue[] = [
                 'catalogue' => $item['catalogue'],
                 'count' => $count,
-                'locales' => array_values($intl),
+                'locales' => \array_values($intl),
             ];
         }
 

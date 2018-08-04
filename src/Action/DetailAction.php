@@ -1,8 +1,16 @@
 <?php
+/**
+ * kiwi-suite/translation (https://github.com/kiwi-suite/translation)
+ *
+ * @package kiwi-suite/translation
+ * @link https://github.com/kiwi-suite/translation
+ * @copyright Copyright (c) 2010 - 2018 kiwi suite GmbH
+ * @license MIT License
+ */
+
+declare(strict_types=1);
 namespace KiwiSuite\Translation\Action;
 
-use Doctrine\Common\Collections\Criteria;
-use Doctrine\ORM\Query\Expr\Join;
 use KiwiSuite\Admin\Response\ApiSuccessResponse;
 use KiwiSuite\Intl\LocaleManager;
 use KiwiSuite\Translation\Entity\Definition;
@@ -60,7 +68,7 @@ final class DetailAction implements MiddlewareInterface
         foreach ($this->localeManager->all() as $localeItem) {
             $intl[$localeItem['locale']] = [
                 'locale' => $localeItem['locale'],
-                'country' => strtolower(\Locale::getRegion($localeItem['locale'])),
+                'country' => \mb_strtolower(\Locale::getRegion($localeItem['locale'])),
                 'message' => null,
                 'id' => null,
             ];
@@ -78,7 +86,7 @@ final class DetailAction implements MiddlewareInterface
 
         /** @var Translation $translation */
         foreach ($result as $translation) {
-            if (!array_key_exists((string) $translation->locale(), $detail['locales'])) {
+            if (!\array_key_exists((string) $translation->locale(), $detail['locales'])) {
                 continue;
             }
 
@@ -87,7 +95,7 @@ final class DetailAction implements MiddlewareInterface
         }
 
 
-        $detail['locales'] = array_values($detail['locales']);
+        $detail['locales'] = \array_values($detail['locales']);
 
         return new ApiSuccessResponse($detail);
     }

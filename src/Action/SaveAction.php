@@ -1,4 +1,14 @@
 <?php
+/**
+ * kiwi-suite/translation (https://github.com/kiwi-suite/translation)
+ *
+ * @package kiwi-suite/translation
+ * @link https://github.com/kiwi-suite/translation
+ * @copyright Copyright (c) 2010 - 2018 kiwi suite GmbH
+ * @license MIT License
+ */
+
+declare(strict_types=1);
 namespace KiwiSuite\Translation\Action;
 
 use KiwiSuite\Admin\Response\ApiSuccessResponse;
@@ -68,14 +78,14 @@ final class SaveAction implements MiddlewareInterface
 
         $translation = $this->translationRepository->findOneBy([
             'locale' => $data['locale'],
-            'definitionId' => $data['definitionId']
+            'definitionId' => $data['definitionId'],
         ]);
 
         if (empty($translation)) {
             $translation = new Translation([
                 'id' => Uuid::uuid4()->toString(),
                 'definitionId' => $data['definitionId'],
-                'locale' => $data['locale']
+                'locale' => $data['locale'],
             ]);
         }
 

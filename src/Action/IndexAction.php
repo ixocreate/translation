@@ -1,8 +1,17 @@
 <?php
+/**
+ * kiwi-suite/translation (https://github.com/kiwi-suite/translation)
+ *
+ * @package kiwi-suite/translation
+ * @link https://github.com/kiwi-suite/translation
+ * @copyright Copyright (c) 2010 - 2018 kiwi suite GmbH
+ * @license MIT License
+ */
+
+declare(strict_types=1);
 namespace KiwiSuite\Translation\Action;
 
 use Doctrine\Common\Collections\Criteria;
-use Doctrine\ORM\Query\Expr\Join;
 use KiwiSuite\Admin\Response\ApiSuccessResponse;
 use KiwiSuite\Intl\LocaleManager;
 use KiwiSuite\Translation\Entity\Definition;
@@ -53,7 +62,7 @@ final class IndexAction implements MiddlewareInterface
         $criteria->orderBy(['name' => 'ASC']);
         $criteria->andWhere(Criteria::expr()->eq('catalogue', $request->getAttribute('catalogue')));
 
-        if (!empty($request->getQueryParams()['search']) && is_string($request->getQueryParams()['search'])) {
+        if (!empty($request->getQueryParams()['search']) && \is_string($request->getQueryParams()['search'])) {
             $criteria->andWhere(Criteria::expr()->contains('name', $request->getQueryParams()['search']));
         }
 
@@ -65,7 +74,7 @@ final class IndexAction implements MiddlewareInterface
             foreach ($this->localeManager->all() as $localeItem) {
                 $intl[$localeItem['locale']] = [
                     'locale' => $localeItem['locale'],
-                    'country' => strtolower(\Locale::getRegion($localeItem['locale'])),
+                    'country' => \mb_strtolower(\Locale::getRegion($localeItem['locale'])),
                     'translated' => false,
                 ];
             }
@@ -77,14 +86,14 @@ final class IndexAction implements MiddlewareInterface
             ];
         }
 
-        $result = $this->translationRepository->findBy(['definitionId' => array_keys($data)]);
+        $result = $this->translationRepository->findBy(['definitionId' => \array_keys($data)]);
         /** @var Translation $translation */
         foreach ($result as $translation) {
-            if (!array_key_exists((string) $translation->definitionId(), $data)) {
+            if (!\array_key_exists((string) $translation->definitionId(), $data)) {
                 continue;
             }
 
-            if (!array_key_exists((string) $translation->locale(), $data[(string) $translation->definitionId()]['locales'])) {
+            if (!\array_key_exists((string) $translation->locale(), $data[(string) $translation->definitionId()]['locales'])) {
                 continue;
             }
 
@@ -93,9 +102,9 @@ final class IndexAction implements MiddlewareInterface
 
 
         foreach ($data as $key => $item) {
-            $data[$key]['locales'] = array_values($data[$key]['locales']);
+            $data[$key]['locales'] = \array_values($data[$key]['locales']);
         }
 
-        return new ApiSuccessResponse(array_values($data));
+        return new ApiSuccessResponse(\array_values($data));
     }
 }
