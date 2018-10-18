@@ -58,7 +58,24 @@ final class IndexAction implements MiddlewareInterface
      */
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
+        $offset = 0;
+        $limit = 25;
+
+        if (!empty($request->getQueryParams()['limit']) && is_scalar($request->getQueryParams()['limit'])) {
+            $limit = (int) $request->getQueryParams()['limit'];
+        }
+
+        if (!empty($request->getQueryParams()['offset']) && is_scalar($request->getQueryParams()['offset'])) {
+            $offset = (int) $request->getQueryParams()['offset'];
+        }
+
+        if ($limit > 500 || empty($limit)) {
+            $limit = 25;
+        }
+
         $criteria = new Criteria();
+        $criteria->setFirstResult($offset);
+        $criteria->setMaxResults($limit);
         $criteria->orderBy(['name' => 'ASC']);
         $criteria->andWhere(Criteria::expr()->eq('catalogue', $request->getAttribute('catalogue')));
 
@@ -105,6 +122,11 @@ final class IndexAction implements MiddlewareInterface
             $data[$key]['locales'] = \array_values($data[$key]['locales']);
         }
 
-        return new ApiSuccessResponse(\array_values($data));
+        return new ApiSuccessResponse([
+            'items' => \array_values($data),
+            'meta' => [
+                'count' => $this->definitionRepository->count(['catalogue' => $request->getAttribute('catalogue')]),
+            ],
+        ]);
     }
 }
