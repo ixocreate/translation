@@ -11,13 +11,15 @@
 declare(strict_types=1);
 namespace KiwiSuite\Translation\Entity;
 
+use Doctrine\ORM\Mapping\Builder\ClassMetadataBuilder;
 use KiwiSuite\CommonTypes\Entity\UuidType;
+use KiwiSuite\Contract\Entity\DatabaseEntityInterface;
 use KiwiSuite\Contract\Type\TypeInterface;
 use KiwiSuite\Entity\Entity\DefinitionCollection;
 use KiwiSuite\Entity\Entity\EntityInterface;
 use KiwiSuite\Entity\Entity\EntityTrait;
 
-final class Translation implements EntityInterface
+final class Translation implements EntityInterface, DatabaseEntityInterface
 {
     use EntityTrait;
 
@@ -72,5 +74,18 @@ final class Translation implements EntityInterface
             new \KiwiSuite\Entity\Entity\Definition('locale', TypeInterface::TYPE_STRING, false, true),
             new \KiwiSuite\Entity\Entity\Definition('message', TypeInterface::TYPE_STRING, true, true),
         ]);
+    }
+
+    /**
+     * @param ClassMetadataBuilder $builder
+     */
+    public static function loadMetadata(ClassMetadataBuilder $builder)
+    {
+        $builder->setTable('translation_translation');
+
+        $builder->createField('id', UuidType::class)->makePrimaryKey()->build();
+        $builder->createField('definitionId', 'string')->build();
+        $builder->createField('locale', 'string')->build();
+        $builder->createField('message', 'text')->build();
     }
 }

@@ -11,13 +11,16 @@
 declare(strict_types=1);
 namespace KiwiSuite\Translation\Entity;
 
+use Doctrine\DBAL\Types\Type;
+use Doctrine\ORM\Mapping\Builder\ClassMetadataBuilder;
 use KiwiSuite\CommonTypes\Entity\UuidType;
+use KiwiSuite\Contract\Entity\DatabaseEntityInterface;
 use KiwiSuite\Contract\Type\TypeInterface;
 use KiwiSuite\Entity\Entity\DefinitionCollection;
 use KiwiSuite\Entity\Entity\EntityInterface;
 use KiwiSuite\Entity\Entity\EntityTrait;
 
-final class Definition implements EntityInterface
+final class Definition implements EntityInterface, DatabaseEntityInterface
 {
     use EntityTrait;
 
@@ -98,5 +101,19 @@ final class Definition implements EntityInterface
             new \KiwiSuite\Entity\Entity\Definition('files', TypeInterface::TYPE_ARRAY, false, true),
             new \KiwiSuite\Entity\Entity\Definition('placeholders', TypeInterface::TYPE_ARRAY, false, true),
         ]);
+    }
+
+    /**
+     * @param ClassMetadataBuilder $builder
+     */
+    public static function loadMetadata(ClassMetadataBuilder $builder)
+    {
+        $builder->setTable('translation_definition');
+
+        $builder->createField('id', UuidType::class)->makePrimaryKey()->build();
+        $builder->createField('name', 'string')->build();
+        $builder->createField('catalogue', 'string')->build();
+        $builder->createField('files', Type::JSON)->build();
+        $builder->createField('placeholders', Type::JSON)->build();
     }
 }

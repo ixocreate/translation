@@ -9,12 +9,11 @@
  */
 
 declare(strict_types=1);
+
 namespace KiwiSuite\Translation\Repository;
 
 use KiwiSuite\Database\Repository\AbstractRepository;
-use Doctrine\ORM\Mapping\Builder\ClassMetadataBuilder;
 use KiwiSuite\Translation\Entity\Definition;
-use KiwiSuite\Translation\Metadata\DefinitionMetadata;
 
 final class DefinitionRepository extends AbstractRepository
 {
@@ -25,10 +24,5 @@ final class DefinitionRepository extends AbstractRepository
     public function getEntityName(): string
     {
         return Definition::class;
-    }
-
-    public function loadMetadata(ClassMetadataBuilder $builder): void
-    {
-        $metadata = (new DefinitionMetadata($builder));
     }
 }

@@ -9,15 +9,14 @@
  */
 
 declare(strict_types=1);
+
 namespace KiwiSuite\Translation\Repository;
 
 use Doctrine\ORM\Query;
 use Doctrine\ORM\Query\Expr\Join;
 use KiwiSuite\Database\Repository\AbstractRepository;
-use Doctrine\ORM\Mapping\Builder\ClassMetadataBuilder;
 use KiwiSuite\Translation\Entity\Definition;
 use KiwiSuite\Translation\Entity\Translation;
-use KiwiSuite\Translation\Metadata\TranslationMetadata;
 
 final class TranslationRepository extends AbstractRepository
 {
@@ -29,11 +28,11 @@ final class TranslationRepository extends AbstractRepository
         return Translation::class;
     }
 
-    public function loadMetadata(ClassMetadataBuilder $builder): void
-    {
-        $metadata = (new TranslationMetadata($builder));
-    }
-
+    /**
+     * @param string $locale
+     * @param string $catalogue
+     * @return array
+     */
     public function loadTranslations(string $locale, string $catalogue): array
     {
         $queryBuilder = $this->createSelectQueryBuilder('t');
