@@ -1,20 +1,18 @@
 {
-    "name": "kiwi-suite/translation",
-    "description": "kiwi-suite/translation",
+    "name": "ixocreate/translation",
+    "description": "Translation package for IXOCREATE",
     "license": "MIT",
     "type": "library",
-    "authors": [
-        {
-            "name": "Thomas Payer"
-        }
-    ],
+    "authors": [{
+        "name": "IXOCREATE"
+    }],
     "require": {
         "php": "^7.1",
-        "kiwi-suite/contract": "dev-develop",
-        "kiwi-suite/entity": "dev-develop",
-        "kiwi-suite/database": "dev-develop",
-        "kiwi-suite/intl": "dev-develop",
-        "kiwi-suite/common-types": "dev-develop",
+        "ixocreate/contract": "dev-develop",
+        "ixocreate/entity": "dev-develop",
+        "ixocreate/database": "dev-develop",
+        "ixocreate/intl": "dev-develop",
+        "ixocreate/common-types": "dev-develop",
         "symfony/translation": "^4.1",
         "nikic/php-parser": "^4.0"
     },
