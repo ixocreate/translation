@@ -1,10 +1,10 @@
 <?php
-namespace KiwiSuite\Translation;
+namespace Ixocreate\Translation;
 
 /** @var ConsoleConfigurator $console */
-use KiwiSuite\ApplicationConsole\ConsoleConfigurator;
-use KiwiSuite\Translation\Console\ExtractCommand;
-use KiwiSuite\Translation\Console\PrepareCommand;
+use Ixocreate\ApplicationConsole\ConsoleConfigurator;
+use Ixocreate\Translation\Console\ExtractCommand;
+use Ixocreate\Translation\Console\PrepareCommand;
 
 $console->addCommand(ExtractCommand::class);
 $console->addCommand(PrepareCommand::class);

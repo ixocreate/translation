@@ -1,8 +1,8 @@
 <?php
-namespace KiwiSuite\Translation;
-use KiwiSuite\Template\TemplateConfigurator;
-use KiwiSuite\Translation\Template\TransExtension;
-use KiwiSuite\Translation\Template\TransPluralExtension;
+namespace Ixocreate\Translation;
+use Ixocreate\Template\TemplateConfigurator;
+use Ixocreate\Translation\Template\TransExtension;
+use Ixocreate\Translation\Template\TransPluralExtension;
 
 /** @var TemplateConfigurator $template */
 

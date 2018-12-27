@@ -9,15 +9,15 @@
  */
 
 declare(strict_types=1);
-namespace KiwiSuite\Translation\Action;
+namespace Ixocreate\Translation\Action;
 
 use Doctrine\Common\Collections\Criteria;
-use KiwiSuite\Admin\Response\ApiSuccessResponse;
-use KiwiSuite\Intl\LocaleManager;
-use KiwiSuite\Translation\Entity\Definition;
-use KiwiSuite\Translation\Entity\Translation;
-use KiwiSuite\Translation\Repository\DefinitionRepository;
-use KiwiSuite\Translation\Repository\TranslationRepository;
+use Ixocreate\Admin\Response\ApiSuccessResponse;
+use Ixocreate\Intl\LocaleManager;
+use Ixocreate\Translation\Entity\Definition;
+use Ixocreate\Translation\Entity\Translation;
+use Ixocreate\Translation\Repository\DefinitionRepository;
+use Ixocreate\Translation\Repository\TranslationRepository;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;

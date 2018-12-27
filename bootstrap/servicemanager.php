@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace KiwiSuite\Translation;
+namespace Ixocreate\Translation;
 
-/** @var \KiwiSuite\ServiceManager\ServiceManagerConfigurator $serviceManager */
-use KiwiSuite\Translation\Translator\Factory\TranslatorFactory;
-use KiwiSuite\Translation\Translator\Translator;
+/** @var \Ixocreate\ServiceManager\ServiceManagerConfigurator $serviceManager */
+use Ixocreate\Translation\Translator\Factory\TranslatorFactory;
+use Ixocreate\Translation\Translator\Translator;
 
 $serviceManager->addFactory(Translator::class, TranslatorFactory::class);

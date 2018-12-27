@@ -25,13 +25,13 @@
     },
     "autoload": {
         "psr-4": {
-            "KiwiSuite\\Translation\\": "src/"
+            "Ixocreate\\Translation\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "KiwiSuiteTest\\Translation\\": "tests/src/",
-            "KiwiSuiteMisc\\Translation\\": "tests/misc/"
+            "IxocreateTest\\Translation\\": "tests/src/",
+            "IxocreateMisc\\Translation\\": "tests/misc/"
         }
     }
 }

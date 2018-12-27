@@ -9,10 +9,10 @@
  */
 
 declare(strict_types=1);
-namespace KiwiSuite\Translation\Template;
+namespace Ixocreate\Translation\Template;
 
-use KiwiSuite\Contract\Template\ExtensionInterface;
-use KiwiSuite\Translation\Translator\Translator;
+use Ixocreate\Contract\Template\ExtensionInterface;
+use Ixocreate\Translation\Translator\Translator;
 
 final class TransPluralExtension implements ExtensionInterface
 {

@@ -9,7 +9,7 @@
  */
 
 declare(strict_types=1);
-namespace KiwiSuite\Translation\Extractor;
+namespace Ixocreate\Translation\Extractor;
 
 use Traversable;
 

@@ -1,12 +1,12 @@
 <?php
 declare(strict_types=1);
 
-namespace KiwiSuite\Admin;
+namespace Ixocreate\Admin;
 
 /** @var RepositoryConfigurator $repository */
-use KiwiSuite\Database\Repository\RepositoryConfigurator;
-use KiwiSuite\Translation\Repository\DefinitionRepository;
-use KiwiSuite\Translation\Repository\TranslationRepository;
+use Ixocreate\Database\Repository\RepositoryConfigurator;
+use Ixocreate\Translation\Repository\DefinitionRepository;
+use Ixocreate\Translation\Repository\TranslationRepository;
 
 $repository->addRepository( DefinitionRepository::class);
 $repository->addRepository( TranslationRepository::class);

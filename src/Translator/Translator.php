@@ -9,9 +9,9 @@
  */
 
 declare(strict_types=1);
-namespace KiwiSuite\Translation\Translator;
+namespace Ixocreate\Translation\Translator;
 
-use KiwiSuite\Translation\Config\Config;
+use Ixocreate\Translation\Config\Config;
 
 final class Translator
 {

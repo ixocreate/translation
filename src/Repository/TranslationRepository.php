@@ -10,13 +10,13 @@
 
 declare(strict_types=1);
 
-namespace KiwiSuite\Translation\Repository;
+namespace Ixocreate\Translation\Repository;
 
 use Doctrine\ORM\Query;
 use Doctrine\ORM\Query\Expr\Join;
-use KiwiSuite\Database\Repository\AbstractRepository;
-use KiwiSuite\Translation\Entity\Definition;
-use KiwiSuite\Translation\Entity\Translation;
+use Ixocreate\Database\Repository\AbstractRepository;
+use Ixocreate\Translation\Entity\Definition;
+use Ixocreate\Translation\Entity\Translation;
 
 final class TranslationRepository extends AbstractRepository
 {

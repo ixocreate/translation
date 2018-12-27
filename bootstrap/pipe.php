@@ -1,16 +1,16 @@
 <?php
 declare(strict_types=1);
 
-namespace KiwiSuite\Translation;
+namespace Ixocreate\Translation;
 
 /** @var PipeConfigurator $pipe */
-use KiwiSuite\Admin\Config\AdminConfig;
-use KiwiSuite\ApplicationHttp\Pipe\GroupPipeConfigurator;
-use KiwiSuite\ApplicationHttp\Pipe\PipeConfigurator;
-use KiwiSuite\Translation\Action\CatalogueIndexAction;
-use KiwiSuite\Translation\Action\DetailAction;
-use KiwiSuite\Translation\Action\IndexAction;
-use KiwiSuite\Translation\Action\SaveAction;
+use Ixocreate\Admin\Config\AdminConfig;
+use Ixocreate\ApplicationHttp\Pipe\GroupPipeConfigurator;
+use Ixocreate\ApplicationHttp\Pipe\PipeConfigurator;
+use Ixocreate\Translation\Action\CatalogueIndexAction;
+use Ixocreate\Translation\Action\DetailAction;
+use Ixocreate\Translation\Action\IndexAction;
+use Ixocreate\Translation\Action\SaveAction;
 
 $pipe->segmentPipe(AdminConfig::class)(function(PipeConfigurator $pipe) {
     $pipe->segment('/api')( function(PipeConfigurator $pipe) {

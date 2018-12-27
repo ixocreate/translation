@@ -9,15 +9,15 @@
  */
 
 declare(strict_types=1);
-namespace KiwiSuite\Translation\Entity;
+namespace Ixocreate\Translation\Entity;
 
 use Doctrine\ORM\Mapping\Builder\ClassMetadataBuilder;
-use KiwiSuite\CommonTypes\Entity\UuidType;
-use KiwiSuite\Contract\Entity\DatabaseEntityInterface;
-use KiwiSuite\Contract\Type\TypeInterface;
-use KiwiSuite\Entity\Entity\DefinitionCollection;
-use KiwiSuite\Entity\Entity\EntityInterface;
-use KiwiSuite\Entity\Entity\EntityTrait;
+use Ixocreate\CommonTypes\Entity\UuidType;
+use Ixocreate\Contract\Entity\DatabaseEntityInterface;
+use Ixocreate\Contract\Type\TypeInterface;
+use Ixocreate\Entity\Entity\DefinitionCollection;
+use Ixocreate\Entity\Entity\EntityInterface;
+use Ixocreate\Entity\Entity\EntityTrait;
 
 final class Translation implements EntityInterface, DatabaseEntityInterface
 {
@@ -69,10 +69,10 @@ final class Translation implements EntityInterface, DatabaseEntityInterface
     protected static function createDefinitions(): DefinitionCollection
     {
         return new DefinitionCollection([
-            new \KiwiSuite\Entity\Entity\Definition('id', UuidType::class, false, true),
-            new \KiwiSuite\Entity\Entity\Definition('definitionId', TypeInterface::TYPE_STRING, false, true),
-            new \KiwiSuite\Entity\Entity\Definition('locale', TypeInterface::TYPE_STRING, false, true),
-            new \KiwiSuite\Entity\Entity\Definition('message', TypeInterface::TYPE_STRING, true, true),
+            new \Ixocreate\Entity\Entity\Definition('id', UuidType::class, false, true),
+            new \Ixocreate\Entity\Entity\Definition('definitionId', TypeInterface::TYPE_STRING, false, true),
+            new \Ixocreate\Entity\Entity\Definition('locale', TypeInterface::TYPE_STRING, false, true),
+            new \Ixocreate\Entity\Entity\Definition('message', TypeInterface::TYPE_STRING, true, true),
         ]);
     }
 

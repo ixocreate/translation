@@ -9,10 +9,10 @@
  */
 
 declare(strict_types=1);
-namespace KiwiSuite\Translation\Config;
+namespace Ixocreate\Translation\Config;
 
-use KiwiSuite\Contract\Application\ConfiguratorInterface;
-use KiwiSuite\Contract\Application\ServiceRegistryInterface;
+use Ixocreate\Contract\Application\ConfiguratorInterface;
+use Ixocreate\Contract\Application\ServiceRegistryInterface;
 
 final class Configurator implements ConfiguratorInterface
 {

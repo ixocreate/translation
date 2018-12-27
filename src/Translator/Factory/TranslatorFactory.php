@@ -9,16 +9,16 @@
  */
 
 declare(strict_types=1);
-namespace KiwiSuite\Translation\Translator\Factory;
+namespace Ixocreate\Translation\Translator\Factory;
 
-use KiwiSuite\Contract\ServiceManager\FactoryInterface;
-use KiwiSuite\Contract\ServiceManager\ServiceManagerInterface;
-use KiwiSuite\Database\Repository\Factory\RepositorySubManager;
-use KiwiSuite\Intl\LocaleManager;
-use KiwiSuite\Translation\Config\Config;
-use KiwiSuite\Translation\Repository\TranslationRepository;
-use KiwiSuite\Translation\Translator\Loader\DatabaseLoader;
-use KiwiSuite\Translation\Translator\Translator;
+use Ixocreate\Contract\ServiceManager\FactoryInterface;
+use Ixocreate\Contract\ServiceManager\ServiceManagerInterface;
+use Ixocreate\Database\Repository\Factory\RepositorySubManager;
+use Ixocreate\Intl\LocaleManager;
+use Ixocreate\Translation\Config\Config;
+use Ixocreate\Translation\Repository\TranslationRepository;
+use Ixocreate\Translation\Translator\Loader\DatabaseLoader;
+use Ixocreate\Translation\Translator\Translator;
 
 final class TranslatorFactory implements FactoryInterface
 {

@@ -9,11 +9,11 @@
  */
 
 declare(strict_types=1);
-namespace KiwiSuite\Translation\Console;
+namespace Ixocreate\Translation\Console;
 
-use KiwiSuite\Contract\Command\CommandInterface;
-use KiwiSuite\Translation\Config\Config;
-use KiwiSuite\Translation\Extractor\Extractor;
+use Ixocreate\Contract\Command\CommandInterface;
+use Ixocreate\Translation\Config\Config;
+use Ixocreate\Translation\Extractor\Extractor;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;

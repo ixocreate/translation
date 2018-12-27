@@ -10,10 +10,10 @@
 
 declare(strict_types=1);
 
-namespace KiwiSuite\Translation\Repository;
+namespace Ixocreate\Translation\Repository;
 
-use KiwiSuite\Database\Repository\AbstractRepository;
-use KiwiSuite\Translation\Entity\Definition;
+use Ixocreate\Database\Repository\AbstractRepository;
+use Ixocreate\Translation\Entity\Definition;
 
 final class DefinitionRepository extends AbstractRepository
 {

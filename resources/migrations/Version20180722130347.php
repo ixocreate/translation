@@ -5,7 +5,7 @@ namespace KiwiMigration;
 use Doctrine\DBAL\Schema\Schema;
 use Doctrine\DBAL\Types\Type;
 use Doctrine\Migrations\AbstractMigration;
-use KiwiSuite\CommonTypes\Entity\UuidType;
+use Ixocreate\CommonTypes\Entity\UuidType;
 
 /**
  * Auto-generated Migration: Please modify to your needs!

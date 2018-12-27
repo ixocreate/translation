@@ -9,11 +9,11 @@
  */
 
 declare(strict_types=1);
-namespace KiwiSuite\Translation\BootstrapItem;
+namespace Ixocreate\Translation\BootstrapItem;
 
-use KiwiSuite\Contract\Application\BootstrapItemInterface;
-use KiwiSuite\Contract\Application\ConfiguratorInterface;
-use KiwiSuite\Translation\Config\Configurator;
+use Ixocreate\Contract\Application\BootstrapItemInterface;
+use Ixocreate\Contract\Application\ConfiguratorInterface;
+use Ixocreate\Translation\Config\Configurator;
 
 final class TranslationBootstrapItem implements BootstrapItemInterface
 {

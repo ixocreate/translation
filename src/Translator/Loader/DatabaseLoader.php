@@ -9,9 +9,9 @@
  */
 
 declare(strict_types=1);
-namespace KiwiSuite\Translation\Translator\Loader;
+namespace Ixocreate\Translation\Translator\Loader;
 
-use KiwiSuite\Translation\Repository\TranslationRepository;
+use Ixocreate\Translation\Repository\TranslationRepository;
 use Symfony\Component\Translation\Exception\InvalidResourceException;
 use Symfony\Component\Translation\Exception\NotFoundResourceException;
 use Symfony\Component\Translation\Loader\LoaderInterface;

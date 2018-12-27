@@ -9,14 +9,14 @@
  */
 
 declare(strict_types=1);
-namespace KiwiSuite\Translation\Console;
+namespace Ixocreate\Translation\Console;
 
-use KiwiSuite\Contract\Command\CommandInterface;
-use KiwiSuite\Entity\Entity\EntityCollection;
-use KiwiSuite\Translation\Config\Config;
-use KiwiSuite\Translation\Entity\Definition;
-use KiwiSuite\Translation\Extractor\Collector;
-use KiwiSuite\Translation\Repository\DefinitionRepository;
+use Ixocreate\Contract\Command\CommandInterface;
+use Ixocreate\Entity\Entity\EntityCollection;
+use Ixocreate\Translation\Config\Config;
+use Ixocreate\Translation\Entity\Definition;
+use Ixocreate\Translation\Extractor\Collector;
+use Ixocreate\Translation\Repository\DefinitionRepository;
 use Ramsey\Uuid\Uuid;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;

@@ -9,16 +9,16 @@
  */
 
 declare(strict_types=1);
-namespace KiwiSuite\Translation\Entity;
+namespace Ixocreate\Translation\Entity;
 
 use Doctrine\DBAL\Types\Type;
 use Doctrine\ORM\Mapping\Builder\ClassMetadataBuilder;
-use KiwiSuite\CommonTypes\Entity\UuidType;
-use KiwiSuite\Contract\Entity\DatabaseEntityInterface;
-use KiwiSuite\Contract\Type\TypeInterface;
-use KiwiSuite\Entity\Entity\DefinitionCollection;
-use KiwiSuite\Entity\Entity\EntityInterface;
-use KiwiSuite\Entity\Entity\EntityTrait;
+use Ixocreate\CommonTypes\Entity\UuidType;
+use Ixocreate\Contract\Entity\DatabaseEntityInterface;
+use Ixocreate\Contract\Type\TypeInterface;
+use Ixocreate\Entity\Entity\DefinitionCollection;
+use Ixocreate\Entity\Entity\EntityInterface;
+use Ixocreate\Entity\Entity\EntityTrait;
 
 final class Definition implements EntityInterface, DatabaseEntityInterface
 {
@@ -95,11 +95,11 @@ final class Definition implements EntityInterface, DatabaseEntityInterface
     protected static function createDefinitions(): DefinitionCollection
     {
         return new DefinitionCollection([
-            new \KiwiSuite\Entity\Entity\Definition('id', UuidType::class, false, true),
-            new \KiwiSuite\Entity\Entity\Definition('name', TypeInterface::TYPE_STRING, false, true),
-            new \KiwiSuite\Entity\Entity\Definition('catalogue', TypeInterface::TYPE_STRING, false, true),
-            new \KiwiSuite\Entity\Entity\Definition('files', TypeInterface::TYPE_ARRAY, false, true),
-            new \KiwiSuite\Entity\Entity\Definition('placeholders', TypeInterface::TYPE_ARRAY, false, true),
+            new \Ixocreate\Entity\Entity\Definition('id', UuidType::class, false, true),
+            new \Ixocreate\Entity\Entity\Definition('name', TypeInterface::TYPE_STRING, false, true),
+            new \Ixocreate\Entity\Entity\Definition('catalogue', TypeInterface::TYPE_STRING, false, true),
+            new \Ixocreate\Entity\Entity\Definition('files', TypeInterface::TYPE_ARRAY, false, true),
+            new \Ixocreate\Entity\Entity\Definition('placeholders', TypeInterface::TYPE_ARRAY, false, true),
         ]);
     }
 

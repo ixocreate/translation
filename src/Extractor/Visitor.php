@@ -9,9 +9,9 @@
  */
 
 declare(strict_types=1);
-namespace KiwiSuite\Translation\Extractor;
+namespace Ixocreate\Translation\Extractor;
 
-use KiwiSuite\Translation\Config\Config;
+use Ixocreate\Translation\Config\Config;
 use PhpParser\Node;
 use PhpParser\NodeVisitorAbstract;
 
