@@ -1,14 +1,12 @@
 <?php
 /**
- * kiwi-suite/translation (https://github.com/kiwi-suite/translation)
- *
- * @package kiwi-suite/translation
- * @link https://github.com/kiwi-suite/translation
- * @copyright Copyright (c) 2010 - 2018 kiwi suite GmbH
+ * @link https://github.com/ixocreate
+ * @copyright IXOCREATE GmbH
  * @license MIT License
  */
 
 declare(strict_types=1);
+
 namespace Ixocreate\Translation\Action;
 
 use Doctrine\Common\Collections\Criteria;
@@ -34,6 +32,7 @@ final class IndexAction implements MiddlewareInterface
      * @var LocaleManager
      */
     private $localeManager;
+
     /**
      * @var TranslationRepository
      */
@@ -61,11 +60,11 @@ final class IndexAction implements MiddlewareInterface
         $offset = 0;
         $limit = 25;
 
-        if (!empty($request->getQueryParams()['limit']) && is_scalar($request->getQueryParams()['limit'])) {
+        if (!empty($request->getQueryParams()['limit']) && \is_scalar($request->getQueryParams()['limit'])) {
             $limit = (int) $request->getQueryParams()['limit'];
         }
 
-        if (!empty($request->getQueryParams()['offset']) && is_scalar($request->getQueryParams()['offset'])) {
+        if (!empty($request->getQueryParams()['offset']) && \is_scalar($request->getQueryParams()['offset'])) {
             $offset = (int) $request->getQueryParams()['offset'];
         }
 

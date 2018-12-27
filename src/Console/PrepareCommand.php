@@ -1,14 +1,12 @@
 <?php
 /**
- * kiwi-suite/translation (https://github.com/kiwi-suite/translation)
- *
- * @package kiwi-suite/translation
- * @link https://github.com/kiwi-suite/translation
- * @copyright Copyright (c) 2010 - 2018 kiwi suite GmbH
+ * @link https://github.com/ixocreate
+ * @copyright IXOCREATE GmbH
  * @license MIT License
  */
 
 declare(strict_types=1);
+
 namespace Ixocreate\Translation\Console;
 
 use Ixocreate\Contract\Command\CommandInterface;
