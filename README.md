@@ -1,6 +1,6 @@
 # IXOCREATE translation
 
-[![Build Status](https://travis-ci.org/ixocreate/translation.svg?branch=master)](https://travis-ci.org/ixocreate/translation)
+[![Build Status](https://travis-ci.com/ixocreate/translation.svg?branch=master)](https://travis-ci.com/ixocreate/translation)
 [![Coverage Status](https://coveralls.io/repos/github/ixocreate/translation/badge.svg?branch=develop)](https://coveralls.io/github/ixocreate/translation?branch=develop)
 [![Packagist](https://img.shields.io/packagist/v/ixocreate/translation.svg)](https://packagist.org/packages/ixocreate/translation)
 [![Packagist Pre Release](https://img.shields.io/packagist/vpre/ixocreate/translation.svg)](https://packagist.org/packages/ixocreate/translation)
