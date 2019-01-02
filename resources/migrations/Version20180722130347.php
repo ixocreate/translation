@@ -15,7 +15,7 @@ class Version20180722130347 extends AbstractMigration
     public function up(Schema $schema)
     {
         $table = $schema->createTable('translation_definition');
-        $table->addColumn('id', UuidType::servicename());
+        $table->addColumn('id', UuidType::serviceName());
         $table->addColumn("name", Type::STRING);
         $table->addColumn("catalogue", Type::STRING);
         $table->addColumn("files", Type::JSON);
@@ -23,8 +23,8 @@ class Version20180722130347 extends AbstractMigration
         $table->setPrimaryKey(["id"]);
 
         $table = $schema->createTable('translation_translation');
-        $table->addColumn("id", UuidType::servicename());
-        $table->addColumn("definitionId", UuidType::servicename());
+        $table->addColumn("id", UuidType::serviceName());
+        $table->addColumn("definitionId", UuidType::serviceName());
         $table->addColumn("locale", Type::STRING);
         $table->addColumn("message", Type::TEXT)->setNotnull(false);
         $table->setPrimaryKey(["id"]);
