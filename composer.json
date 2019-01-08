@@ -3,9 +3,11 @@
     "description": "Translation package for IXOCREATE",
     "license": "MIT",
     "type": "library",
-    "authors": [{
-        "name": "IXOCREATE"
-    }],
+    "authors": [
+        {
+            "name": "IXOCREATE"
+        }
+    ],
     "require": {
         "php": "^7.1",
         "ixocreate/contract": "dev-develop",
