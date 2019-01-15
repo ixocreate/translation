@@ -8,13 +8,15 @@
             "name": "IXOCREATE"
         }
     ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
         "php": "^7.1",
-        "ixocreate/contract": "dev-develop",
-        "ixocreate/entity": "dev-develop",
-        "ixocreate/database": "dev-develop",
-        "ixocreate/intl": "dev-develop",
-        "ixocreate/common-types": "dev-develop",
+        "ixocreate/contract": "=1.0.0-alpha1",
+        "ixocreate/entity": "=1.0.0-alpha1",
+        "ixocreate/database": "=1.0.0-alpha1",
+        "ixocreate/intl": "=1.0.0-alpha1",
+        "ixocreate/common-types": "=1.0.0-alpha1",
         "symfony/translation": "^4.1",
         "nikic/php-parser": "^4.0"
     },
