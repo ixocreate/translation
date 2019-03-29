@@ -11,6 +11,7 @@ namespace Ixocreate\Translation\Extractor;
 
 use Ixocreate\Translation\Config\Config;
 use PhpParser\Node;
+use PhpParser\Node\Expr\MethodCall as MethodCallNode;
 use PhpParser\NodeVisitorAbstract;
 
 final class Visitor extends NodeVisitorAbstract
@@ -45,14 +46,15 @@ final class Visitor extends NodeVisitorAbstract
 
     /**
      * @param Node $node
-     * @return int|null|Node|Node[]|void
+     * @return int|Node|Node[]|null
      */
     public function leaveNode(Node $node)
     {
-        if ($node instanceof Node\Expr\MethodCall) {
+        if ($node instanceof MethodCallNode) {
             $this->handleTrans($node);
             $this->handleTransChoice($node);
         }
+        return null;
     }
 
     /**
@@ -62,11 +64,11 @@ final class Visitor extends NodeVisitorAbstract
     private function extractTranslation(?Node\Arg $arg = null): string
     {
         if (!$arg) {
-            return "";
+            return '';
         }
 
         if (!($arg->value instanceof Node\Scalar\String_)) {
-            return "";
+            return '';
         }
 
         return (string) $arg->value->value;
@@ -116,13 +118,9 @@ final class Visitor extends NodeVisitorAbstract
     /**
      * @param Node $node
      */
-    private function handleTrans(Node $node)
+    private function handleTrans(MethodCallNode $node)
     {
-        if (!($node->name instanceof Node\Identifier)) {
-            return;
-        }
-
-        if ($node->name->name !== "trans") {
+        if (!($node->name instanceof Node\Identifier) || $node->name->name !== 'trans') {
             return;
         }
 
@@ -140,13 +138,9 @@ final class Visitor extends NodeVisitorAbstract
     /**
      * @param Node $node
      */
-    private function handleTransChoice(Node $node)
+    private function handleTransChoice(MethodCallNode $node)
     {
-        if (!($node->name instanceof Node\Identifier)) {
-            return;
-        }
-
-        if ($node->name->name !== "transPlural") {
+        if (!($node->name instanceof Node\Identifier) || $node->name->name !== 'transPlural') {
             return;
         }
 
