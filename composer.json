@@ -1,5 +1,5 @@
 {
-    "name": "ixocreate/translation",
+    "name": "ixocreate/translation-package",
     "description": "Translation package for IXOCREATE",
     "license": "MIT",
     "type": "library",
