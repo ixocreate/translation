@@ -7,16 +7,16 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Translation\Entity;
+namespace Ixocreate\Package\Translation\Entity;
 
 use Doctrine\DBAL\Types\Type;
 use Doctrine\ORM\Mapping\Builder\ClassMetadataBuilder;
-use Ixocreate\CommonTypes\Entity\UuidType;
-use Ixocreate\Contract\Entity\DatabaseEntityInterface;
-use Ixocreate\Contract\Type\TypeInterface;
-use Ixocreate\Entity\Entity\DefinitionCollection;
-use Ixocreate\Entity\Entity\EntityInterface;
-use Ixocreate\Entity\Entity\EntityTrait;
+use Ixocreate\Package\Type\Entity\UuidType;
+use Ixocreate\Entity\DatabaseEntityInterface;
+use Ixocreate\Package\Type\TypeInterface;
+use Ixocreate\Package\Entity\DefinitionCollection;
+use Ixocreate\Package\Entity\EntityInterface;
+use Ixocreate\Package\Entity\EntityTrait;
 
 final class Definition implements EntityInterface, DatabaseEntityInterface
 {
@@ -93,11 +93,11 @@ final class Definition implements EntityInterface, DatabaseEntityInterface
     protected static function createDefinitions(): DefinitionCollection
     {
         return new DefinitionCollection([
-            new \Ixocreate\Entity\Entity\Definition('id', UuidType::class, false, true),
-            new \Ixocreate\Entity\Entity\Definition('name', TypeInterface::TYPE_STRING, false, true),
-            new \Ixocreate\Entity\Entity\Definition('catalogue', TypeInterface::TYPE_STRING, false, true),
-            new \Ixocreate\Entity\Entity\Definition('files', TypeInterface::TYPE_ARRAY, false, true),
-            new \Ixocreate\Entity\Entity\Definition('placeholders', TypeInterface::TYPE_ARRAY, false, true),
+            new \Ixocreate\Package\Entity\Definition('id', UuidType::class, false, true),
+            new \Ixocreate\Package\Entity\Definition('name', TypeInterface::TYPE_STRING, false, true),
+            new \Ixocreate\Package\Entity\Definition('catalogue', TypeInterface::TYPE_STRING, false, true),
+            new \Ixocreate\Package\Entity\Definition('files', TypeInterface::TYPE_ARRAY, false, true),
+            new \Ixocreate\Package\Entity\Definition('placeholders', TypeInterface::TYPE_ARRAY, false, true),
         ]);
     }
 

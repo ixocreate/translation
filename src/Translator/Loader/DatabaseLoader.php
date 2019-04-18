@@ -7,9 +7,9 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Translation\Translator\Loader;
+namespace Ixocreate\Package\Translation\Translator\Loader;
 
-use Ixocreate\Translation\Repository\TranslationRepository;
+use Ixocreate\Package\Translation\Repository\TranslationRepository;
 use Symfony\Component\Translation\Exception\InvalidResourceException;
 use Symfony\Component\Translation\Exception\NotFoundResourceException;
 use Symfony\Component\Translation\Loader\LoaderInterface;

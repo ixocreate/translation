@@ -7,10 +7,10 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Translation\Repository;
+namespace Ixocreate\Package\Translation\Repository;
 
-use Ixocreate\Database\Repository\AbstractRepository;
-use Ixocreate\Translation\Entity\Definition;
+use Ixocreate\Package\Database\Repository\AbstractRepository;
+use Ixocreate\Package\Translation\Entity\Definition;
 
 final class DefinitionRepository extends AbstractRepository
 {

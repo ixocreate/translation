@@ -7,10 +7,10 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Admin;
+namespace Ixocreate\Package\Admin;
 
 /** @var MiddlewareConfigurator $middleware */
 
-use Ixocreate\ApplicationHttp\Middleware\MiddlewareConfigurator;
+use Ixocreate\Application\Http\Middleware\MiddlewareConfigurator;
 
 $middleware->addDirectory(__DIR__ . '/../src/Action', true);

@@ -1,6 +1,6 @@
 {
-    "name": "ixocreate/translation",
-    "description": "Translation package for IXOCREATE",
+    "name": "ixocreate/translation-package",
+    "description": "IXOCREATE Translation Package",
     "license": "MIT",
     "type": "library",
     "authors": [
@@ -13,28 +13,24 @@
     "require": {
         "php": "^7.1",
         "ext-json": "*",
-        "ixocreate/contract": "dev-develop",
-        "ixocreate/entity": "dev-develop",
-        "ixocreate/database": "dev-develop",
-        "ixocreate/intl": "dev-develop",
-        "ixocreate/common-types": "dev-develop",
+        "ixocreate/application": "dev-consolidate",
         "symfony/translation": "^4.1",
         "nikic/php-parser": "^4.0"
     },
     "require-dev": {
-        "ixocreate/coding-standard": "^1.0.1",
+        "ixocreate/coding-standard": "^1.0",
         "php-coveralls/php-coveralls": "^2.1",
         "phpunit/phpunit": "^7.0"
     },
     "autoload": {
         "psr-4": {
-            "Ixocreate\\Translation\\": "src/"
+            "Ixocreate\\Package\\Translation\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "IxocreateTest\\Translation\\": "tests/src/",
-            "IxocreateMisc\\Translation\\": "tests/misc/"
+            "Ixocreate\\Test\\Translation\\": "tests/src/",
+            "Ixocreate\\Misc\\Translation\\": "tests/misc/"
         }
     },
     "scripts": {

@@ -7,16 +7,16 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Translation\Translator\Factory;
+namespace Ixocreate\Package\Translation\Translator\Factory;
 
-use Ixocreate\Contract\ServiceManager\FactoryInterface;
-use Ixocreate\Contract\ServiceManager\ServiceManagerInterface;
-use Ixocreate\Database\Repository\Factory\RepositorySubManager;
-use Ixocreate\Intl\LocaleManager;
-use Ixocreate\Translation\Config\Config;
-use Ixocreate\Translation\Repository\TranslationRepository;
-use Ixocreate\Translation\Translator\Loader\DatabaseLoader;
-use Ixocreate\Translation\Translator\Translator;
+use Ixocreate\ServiceManager\FactoryInterface;
+use Ixocreate\ServiceManager\ServiceManagerInterface;
+use Ixocreate\Package\Database\Repository\Factory\RepositorySubManager;
+use Ixocreate\Package\Intl\LocaleManager;
+use Ixocreate\Package\Translation\Config\Config;
+use Ixocreate\Package\Translation\Repository\TranslationRepository;
+use Ixocreate\Package\Translation\Translator\Loader\DatabaseLoader;
+use Ixocreate\Package\Translation\Translator\Translator;
 
 final class TranslatorFactory implements FactoryInterface
 {

@@ -7,13 +7,13 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Translation;
+namespace Ixocreate\Package\Translation;
 
 /** @var ConsoleConfigurator $console */
 
-use Ixocreate\ApplicationConsole\ConsoleConfigurator;
-use Ixocreate\Translation\Console\ExtractCommand;
-use Ixocreate\Translation\Console\PrepareCommand;
+use Ixocreate\Application\Console\ConsoleConfigurator;
+use Ixocreate\Package\Translation\Console\ExtractCommand;
+use Ixocreate\Package\Translation\Console\PrepareCommand;
 
 $console->addCommand(ExtractCommand::class);
 $console->addCommand(PrepareCommand::class);

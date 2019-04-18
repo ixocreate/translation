@@ -7,15 +7,15 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Translation\Entity;
+namespace Ixocreate\Package\Translation\Entity;
 
 use Doctrine\ORM\Mapping\Builder\ClassMetadataBuilder;
-use Ixocreate\CommonTypes\Entity\UuidType;
-use Ixocreate\Contract\Entity\DatabaseEntityInterface;
-use Ixocreate\Contract\Type\TypeInterface;
-use Ixocreate\Entity\Entity\DefinitionCollection;
-use Ixocreate\Entity\Entity\EntityInterface;
-use Ixocreate\Entity\Entity\EntityTrait;
+use Ixocreate\Package\Type\Entity\UuidType;
+use Ixocreate\Entity\DatabaseEntityInterface;
+use Ixocreate\Package\Type\TypeInterface;
+use Ixocreate\Package\Entity\DefinitionCollection;
+use Ixocreate\Package\Entity\EntityInterface;
+use Ixocreate\Package\Entity\EntityTrait;
 
 final class Translation implements EntityInterface, DatabaseEntityInterface
 {
@@ -67,10 +67,10 @@ final class Translation implements EntityInterface, DatabaseEntityInterface
     protected static function createDefinitions(): DefinitionCollection
     {
         return new DefinitionCollection([
-            new \Ixocreate\Entity\Entity\Definition('id', UuidType::class, false, true),
-            new \Ixocreate\Entity\Entity\Definition('definitionId', TypeInterface::TYPE_STRING, false, true),
-            new \Ixocreate\Entity\Entity\Definition('locale', TypeInterface::TYPE_STRING, false, true),
-            new \Ixocreate\Entity\Entity\Definition('message', TypeInterface::TYPE_STRING, true, true),
+            new \Ixocreate\Package\Entity\Definition('id', UuidType::class, false, true),
+            new \Ixocreate\Package\Entity\Definition('definitionId', TypeInterface::TYPE_STRING, false, true),
+            new \Ixocreate\Package\Entity\Definition('locale', TypeInterface::TYPE_STRING, false, true),
+            new \Ixocreate\Package\Entity\Definition('message', TypeInterface::TYPE_STRING, true, true),
         ]);
     }
 

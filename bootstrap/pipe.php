@@ -7,15 +7,15 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Translation;
+namespace Ixocreate\Package\Translation;
 
-use Ixocreate\Admin\Config\AdminConfig;
-use Ixocreate\ApplicationHttp\Pipe\GroupPipeConfigurator;
-use Ixocreate\ApplicationHttp\Pipe\PipeConfigurator;
-use Ixocreate\Translation\Action\CatalogueIndexAction;
-use Ixocreate\Translation\Action\DetailAction;
-use Ixocreate\Translation\Action\IndexAction;
-use Ixocreate\Translation\Action\SaveAction;
+use Ixocreate\Package\Admin\Config\AdminConfig;
+use Ixocreate\Application\Http\Pipe\GroupPipeConfigurator;
+use Ixocreate\Application\Http\Pipe\PipeConfigurator;
+use Ixocreate\Package\Translation\Action\CatalogueIndexAction;
+use Ixocreate\Package\Translation\Action\DetailAction;
+use Ixocreate\Package\Translation\Action\IndexAction;
+use Ixocreate\Package\Translation\Action\SaveAction;
 
 /** @var PipeConfigurator $pipe */
 

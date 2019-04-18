@@ -7,10 +7,10 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Translation\Template;
+namespace Ixocreate\Package\Translation\Template;
 
-use Ixocreate\Contract\Template\ExtensionInterface;
-use Ixocreate\Translation\Translator\Translator;
+use Ixocreate\Template\ExtensionInterface;
+use Ixocreate\Package\Translation\Translator\Translator;
 
 final class TransExtension implements ExtensionInterface
 {

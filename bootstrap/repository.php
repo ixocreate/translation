@@ -7,11 +7,11 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Admin;
+namespace Ixocreate\Package\Admin;
 
-use Ixocreate\Database\Repository\RepositoryConfigurator;
-use Ixocreate\Translation\Repository\DefinitionRepository;
-use Ixocreate\Translation\Repository\TranslationRepository;
+use Ixocreate\Package\Database\Repository\RepositoryConfigurator;
+use Ixocreate\Package\Translation\Repository\DefinitionRepository;
+use Ixocreate\Package\Translation\Repository\TranslationRepository;
 
 /** @var RepositoryConfigurator $repository */
 

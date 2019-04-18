@@ -7,9 +7,9 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Translation\Extractor;
+namespace Ixocreate\Package\Translation\Extractor;
 
-use Ixocreate\Translation\Config\Config;
+use Ixocreate\Package\Translation\Config\Config;
 use PhpParser\Error;
 use PhpParser\NodeTraverser;
 use PhpParser\ParserFactory;
