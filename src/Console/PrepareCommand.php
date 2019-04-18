@@ -7,14 +7,14 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Package\Translation\Console;
+namespace Ixocreate\Translation\Package\Console;
 
 use Ixocreate\Application\Console\CommandInterface;;
-use Ixocreate\Package\Entity\EntityCollection;
-use Ixocreate\Package\Translation\Config\Config;
-use Ixocreate\Package\Translation\Entity\Definition;
-use Ixocreate\Package\Translation\Extractor\Collector;
-use Ixocreate\Package\Translation\Repository\DefinitionRepository;
+use Ixocreate\Entity\Package\EntityCollection;
+use Ixocreate\Translation\Package\Config\Config;
+use Ixocreate\Translation\Package\Entity\Definition;
+use Ixocreate\Translation\Package\Extractor\Collector;
+use Ixocreate\Translation\Package\Repository\DefinitionRepository;
 use Ramsey\Uuid\Uuid;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;

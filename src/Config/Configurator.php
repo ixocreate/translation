@@ -7,7 +7,7 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Package\Translation\Config;
+namespace Ixocreate\Translation\Package\Config;
 
 use Ixocreate\Application\ConfiguratorInterface;
 use Ixocreate\Application\ServiceRegistryInterface;

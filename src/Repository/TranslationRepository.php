@@ -7,13 +7,13 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Package\Translation\Repository;
+namespace Ixocreate\Translation\Package\Repository;
 
 use Doctrine\ORM\Query;
 use Doctrine\ORM\Query\Expr\Join;
-use Ixocreate\Package\Database\Repository\AbstractRepository;
-use Ixocreate\Package\Translation\Entity\Definition;
-use Ixocreate\Package\Translation\Entity\Translation;
+use Ixocreate\Database\Package\Repository\AbstractRepository;
+use Ixocreate\Translation\Package\Entity\Definition;
+use Ixocreate\Translation\Package\Entity\Translation;
 
 final class TranslationRepository extends AbstractRepository
 {

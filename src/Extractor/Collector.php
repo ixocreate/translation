@@ -7,7 +7,7 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Package\Translation\Extractor;
+namespace Ixocreate\Translation\Package\Extractor;
 
 use Traversable;
 

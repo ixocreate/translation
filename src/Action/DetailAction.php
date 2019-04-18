@@ -7,14 +7,14 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Package\Translation\Action;
+namespace Ixocreate\Translation\Package\Action;
 
-use Ixocreate\Package\Admin\Response\ApiSuccessResponse;
-use Ixocreate\Package\Intl\LocaleManager;
-use Ixocreate\Package\Translation\Entity\Definition;
-use Ixocreate\Package\Translation\Entity\Translation;
-use Ixocreate\Package\Translation\Repository\DefinitionRepository;
-use Ixocreate\Package\Translation\Repository\TranslationRepository;
+use Ixocreate\Admin\Package\Response\ApiSuccessResponse;
+use Ixocreate\Intl\Package\LocaleManager;
+use Ixocreate\Translation\Package\Entity\Definition;
+use Ixocreate\Translation\Package\Entity\Translation;
+use Ixocreate\Translation\Package\Repository\DefinitionRepository;
+use Ixocreate\Translation\Package\Repository\TranslationRepository;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;

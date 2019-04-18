@@ -7,10 +7,10 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Package\Translation\Template;
+namespace Ixocreate\Translation\Package\Template;
 
 use Ixocreate\Template\ExtensionInterface;
-use Ixocreate\Package\Translation\Translator\Translator;
+use Ixocreate\Translation\Package\Translator\Translator;
 
 final class TransPluralExtension implements ExtensionInterface
 {

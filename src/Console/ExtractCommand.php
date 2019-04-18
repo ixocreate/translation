@@ -7,11 +7,11 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Package\Translation\Console;
+namespace Ixocreate\Translation\Package\Console;
 
 use Ixocreate\Application\Console\CommandInterface;;
-use Ixocreate\Package\Translation\Config\Config;
-use Ixocreate\Package\Translation\Extractor\Extractor;
+use Ixocreate\Translation\Package\Config\Config;
+use Ixocreate\Translation\Package\Extractor\Extractor;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;

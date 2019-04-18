@@ -7,9 +7,9 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Package\Translation\Translator;
+namespace Ixocreate\Translation\Package\Translator;
 
-use Ixocreate\Package\Translation\Config\Config;
+use Ixocreate\Translation\Package\Config\Config;
 
 final class Translator
 {

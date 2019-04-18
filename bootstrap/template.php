@@ -7,11 +7,11 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Package\Translation;
+namespace Ixocreate\Translation\Package;
 
-use Ixocreate\Package\Template\TemplateConfigurator;
-use Ixocreate\Package\Translation\Template\TransExtension;
-use Ixocreate\Package\Translation\Template\TransPluralExtension;
+use Ixocreate\Template\Package\TemplateConfigurator;
+use Ixocreate\Translation\Package\Template\TransExtension;
+use Ixocreate\Translation\Package\Template\TransPluralExtension;
 
 /** @var TemplateConfigurator $template */
 
