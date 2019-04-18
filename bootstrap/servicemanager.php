@@ -7,10 +7,10 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Translation\Package;
+namespace Ixocreate\Translation;
 
-use Ixocreate\Translation\Package\Translator\Factory\TranslatorFactory;
-use Ixocreate\Translation\Package\Translator\Translator;
+use Ixocreate\Translation\Translator\Factory\TranslatorFactory;
+use Ixocreate\Translation\Translator\Translator;
 
 /** @var \Ixocreate\ServiceManager\ServiceManagerConfigurator $serviceManager */
 

@@ -7,14 +7,14 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Translation\Package\Action;
+namespace Ixocreate\Translation\Action;
 
 use Doctrine\ORM\Query\Expr\Join;
-use Ixocreate\Admin\Package\Response\ApiSuccessResponse;
-use Ixocreate\Intl\Package\LocaleManager;
-use Ixocreate\Translation\Package\Entity\Definition;
-use Ixocreate\Translation\Package\Entity\Translation;
-use Ixocreate\Translation\Package\Repository\DefinitionRepository;
+use Ixocreate\Admin\Response\ApiSuccessResponse;
+use Ixocreate\Intl\LocaleManager;
+use Ixocreate\Translation\Entity\Definition;
+use Ixocreate\Translation\Entity\Translation;
+use Ixocreate\Translation\Repository\DefinitionRepository;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;
