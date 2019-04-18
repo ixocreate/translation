@@ -7,10 +7,10 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Translation\Package\BootstrapItem;
+namespace Ixocreate\Translation\Package\Bootstrap;
 
-use Ixocreate\Application\Bootstrap\BootstrapItemInterface;
-use Ixocreate\Application\ConfiguratorInterface;
+use Ixocreate\Application\Service\Bootstrap\BootstrapItemInterface;
+use Ixocreate\Application\Service\Configurator\ConfiguratorInterface;
 use Ixocreate\Translation\Package\Config\Configurator;
 
 final class TranslationBootstrapItem implements BootstrapItemInterface

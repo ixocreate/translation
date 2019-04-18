@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 namespace Ixocreate\Translation\Package\Console;
 
-use Ixocreate\Application\Console\CommandInterface;;
+use Ixocreate\Application\Console\CommandInterface;
 use Ixocreate\Entity\Package\EntityCollection;
 use Ixocreate\Translation\Package\Config\Config;
 use Ixocreate\Translation\Package\Entity\Definition;
