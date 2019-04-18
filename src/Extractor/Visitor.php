@@ -33,6 +33,7 @@ final class Visitor extends NodeVisitorAbstract
 
     /**
      * Visitor constructor.
+     *
      * @param Collector $collector
      * @param string $file
      * @param Config $config
@@ -71,7 +72,7 @@ final class Visitor extends NodeVisitorAbstract
             return '';
         }
 
-        return (string) $arg->value->value;
+        return (string)$arg->value->value;
     }
 
     /**
@@ -88,7 +89,7 @@ final class Visitor extends NodeVisitorAbstract
             return $this->config->defaultCatalogue();
         }
 
-        return (string) $arg->value->value;
+        return (string)$arg->value->value;
     }
 
     /**

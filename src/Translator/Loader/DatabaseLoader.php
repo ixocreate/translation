@@ -33,11 +33,9 @@ final class DatabaseLoader implements LoaderInterface
      * @param mixed $resource A resource
      * @param string $locale A locale
      * @param string $domain The domain
-     *
-     * @throws NotFoundResourceException when the resource cannot be found
      * @throws InvalidResourceException  when the resource cannot be loaded
+     * @throws NotFoundResourceException when the resource cannot be found
      * @return MessageCatalogue A MessageCatalogue instance
-     *
      */
     public function load($resource, $locale, $domain = 'messages')
     {

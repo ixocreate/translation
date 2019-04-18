@@ -7,12 +7,13 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Translation\Config;
+namespace Ixocreate\Translation;
 
-use Ixocreate\Application\Service\Configurator\ConfiguratorInterface;
-use Ixocreate\Application\Service\Registry\ServiceRegistryInterface;
+use Ixocreate\Application\ConfiguratorInterface;
+use Ixocreate\Application\Service\ServiceRegistryInterface;
+use Ixocreate\Translation\Config\Config;
 
-final class Configurator implements ConfiguratorInterface
+final class TranslationConfigurator implements ConfiguratorInterface
 {
     private $extractDirectories = [];
 

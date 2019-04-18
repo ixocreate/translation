@@ -39,12 +39,16 @@ final class SaveAction implements MiddlewareInterface
 
     /**
      * CatalogueIndexAction constructor.
+     *
      * @param DefinitionRepository $definitionRepository
      * @param TranslationRepository $translationRepository
      * @param LocaleManager $localeManager
      */
-    public function __construct(DefinitionRepository $definitionRepository, TranslationRepository $translationRepository, LocaleManager $localeManager)
-    {
+    public function __construct(
+        DefinitionRepository $definitionRepository,
+        TranslationRepository $translationRepository,
+        LocaleManager $localeManager
+    ) {
         $this->definitionRepository = $definitionRepository;
         $this->localeManager = $localeManager;
         $this->translationRepository = $translationRepository;
@@ -58,7 +62,7 @@ final class SaveAction implements MiddlewareInterface
     {
         $data = $request->getParsedBody();
 
-        $message = (string) $data['message'];
+        $message = (string)$data['message'];
 
         if (!empty($data['id'])) {
             /** @var Translation $translation */

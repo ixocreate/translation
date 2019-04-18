@@ -25,6 +25,7 @@ final class Translator
 
     /**
      * Translator constructor.
+     *
      * @param \Symfony\Component\Translation\Translator $translator
      * @param Config $config
      */
@@ -41,8 +42,12 @@ final class Translator
      * @param null|string $locale
      * @return string
      */
-    public function trans(string $name, array $parameters = [], ?string $catalogue = null, ?string $locale = null): string
-    {
+    public function trans(
+        string $name,
+        array $parameters = [],
+        ?string $catalogue = null,
+        ?string $locale = null
+    ): string {
         if ($catalogue === null) {
             $catalogue = $this->config->defaultCatalogue();
         }
@@ -62,8 +67,13 @@ final class Translator
      * @param null|string $locale
      * @return string
      */
-    public function transPlural(string $name, int $number, array $parameters = [], ?string $catalogue = null, ?string $locale = null)
-    {
+    public function transPlural(
+        string $name,
+        int $number,
+        array $parameters = [],
+        ?string $catalogue = null,
+        ?string $locale = null
+    ) {
         if ($catalogue === null) {
             $catalogue = $this->config->defaultCatalogue();
         }

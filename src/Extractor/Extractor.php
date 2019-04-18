@@ -58,7 +58,10 @@ final class Extractor
                     $extractedFiles[] = $this->toSplFileInfo($file);
                 }
             } elseif (\is_dir($file)) {
-                $extractedFiles = \array_merge($extractedFiles, \iterator_to_array((new Finder())->files()->name('*.php')->name('*.phtml')->in($file)->getIterator()));
+                $extractedFiles = \array_merge(
+                    $extractedFiles,
+                    \iterator_to_array((new Finder())->files()->name('*.php')->name('*.phtml')->in($file)->getIterator())
+                );
             }
         }
 

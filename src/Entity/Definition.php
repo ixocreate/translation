@@ -11,12 +11,12 @@ namespace Ixocreate\Translation\Entity;
 
 use Doctrine\DBAL\Types\Type;
 use Doctrine\ORM\Mapping\Builder\ClassMetadataBuilder;
-use Ixocreate\Type\Entity\UuidType;
-use Ixocreate\Entity\DatabaseEntityInterface;
-use Ixocreate\Type\TypeInterface;
+use Ixocreate\Database\DatabaseEntityInterface;
 use Ixocreate\Entity\DefinitionCollection;
 use Ixocreate\Entity\EntityInterface;
 use Ixocreate\Entity\EntityTrait;
+use Ixocreate\Type\Entity\UuidType;
+use Ixocreate\Type\TypeInterface;
 
 final class Definition implements EntityInterface, DatabaseEntityInterface
 {

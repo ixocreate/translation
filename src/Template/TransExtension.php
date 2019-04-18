@@ -21,6 +21,7 @@ final class TransExtension implements ExtensionInterface
 
     /**
      * TranslateExtension constructor.
+     *
      * @param Translator $translator
      */
     public function __construct(Translator $translator)

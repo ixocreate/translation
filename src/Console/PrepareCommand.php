@@ -50,12 +50,15 @@ final class PrepareCommand extends Command implements CommandInterface
 
         $definitionCollection = $this->definitionRepository->findAll();
         $definitionCollection = new EntityCollection($definitionCollection, function (Definition $definition) {
-            return (string) $definition->id();
+            return (string)$definition->id();
         });
 
         foreach ($collector as $catalogueData) {
             foreach ($catalogueData['translations'] as $translationData) {
-                $checkCollection = $definitionCollection->filter(function (Definition $definition) use ($catalogueData, $translationData) {
+                $checkCollection = $definitionCollection->filter(function (Definition $definition) use (
+                    $catalogueData,
+                    $translationData
+                ) {
                     return $definition->catalogue() === $catalogueData['name'] && $definition->name() === $translationData['name'];
                 });
 
