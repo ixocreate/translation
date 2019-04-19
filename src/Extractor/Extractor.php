@@ -18,6 +18,11 @@ use Symfony\Component\Finder\SplFileInfo;
 
 final class Extractor
 {
+    /**
+     * @param Config $config
+     * @param array $files
+     * @return Collector
+     */
     public function extract(Config $config, array $files): Collector
     {
         $collector = new Collector();
@@ -43,7 +48,7 @@ final class Extractor
      * @param array $files
      * @return SplFileInfo[]
      */
-    private function extractFiles(array $files)
+    private function extractFiles(array $files): array
     {
         $extractedFiles = [];
 
@@ -53,19 +58,30 @@ final class Extractor
                     $extractedFiles[] = $this->toSplFileInfo($file);
                 }
             } elseif (\is_dir($file)) {
-                $extractedFiles = \array_merge($extractedFiles, \iterator_to_array((new Finder())->files()->name('*.php')->name('*.phtml')->in($file)->getIterator()));
+                $extractedFiles = \array_merge(
+                    $extractedFiles,
+                    \iterator_to_array((new Finder())->files()->name('*.php')->name('*.phtml')->in($file)->getIterator())
+                );
             }
         }
 
         return $extractedFiles;
     }
 
+    /**
+     * @param string $file
+     * @return SplFileInfo
+     */
     private function toSplFileInfo(string $file): SplFileInfo
     {
-        return new SplFileInfo($file, "", "");
+        return new SplFileInfo($file, '', '');
     }
 
-    private function canBeExtracted($file)
+    /**
+     * @param string $file
+     * @return bool
+     */
+    private function canBeExtracted(string $file): bool
     {
         return \is_file($file) && \in_array(\pathinfo($file, PATHINFO_EXTENSION), ['php', 'phtml']);
     }

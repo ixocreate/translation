@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 namespace Ixocreate\Translation\Console;
 
-use Ixocreate\Contract\Command\CommandInterface;
+use Ixocreate\Application\Console\CommandInterface;
 use Ixocreate\Translation\Config\Config;
 use Ixocreate\Translation\Extractor\Extractor;
 use Symfony\Component\Console\Command\Command;

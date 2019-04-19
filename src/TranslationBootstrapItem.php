@@ -7,11 +7,10 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Translation\BootstrapItem;
+namespace Ixocreate\Translation;
 
-use Ixocreate\Contract\Application\BootstrapItemInterface;
-use Ixocreate\Contract\Application\ConfiguratorInterface;
-use Ixocreate\Translation\Config\Configurator;
+use Ixocreate\Application\Bootstrap\BootstrapItemInterface;
+use Ixocreate\Application\Configurator\ConfiguratorInterface;
 
 final class TranslationBootstrapItem implements BootstrapItemInterface
 {
@@ -20,7 +19,7 @@ final class TranslationBootstrapItem implements BootstrapItemInterface
      */
     public function getConfigurator(): ConfiguratorInterface
     {
-        return new Configurator();
+        return new TranslationConfigurator();
     }
 
     /**

@@ -11,12 +11,12 @@ namespace Ixocreate\Translation\Entity;
 
 use Doctrine\DBAL\Types\Type;
 use Doctrine\ORM\Mapping\Builder\ClassMetadataBuilder;
-use Ixocreate\CommonTypes\Entity\UuidType;
-use Ixocreate\Contract\Entity\DatabaseEntityInterface;
-use Ixocreate\Contract\Type\TypeInterface;
-use Ixocreate\Entity\Entity\DefinitionCollection;
-use Ixocreate\Entity\Entity\EntityInterface;
-use Ixocreate\Entity\Entity\EntityTrait;
+use Ixocreate\Database\DatabaseEntityInterface;
+use Ixocreate\Entity\DefinitionCollection;
+use Ixocreate\Entity\EntityInterface;
+use Ixocreate\Entity\EntityTrait;
+use Ixocreate\Type\Entity\UuidType;
+use Ixocreate\Type\TypeInterface;
 
 final class Definition implements EntityInterface, DatabaseEntityInterface
 {
@@ -93,11 +93,11 @@ final class Definition implements EntityInterface, DatabaseEntityInterface
     protected static function createDefinitions(): DefinitionCollection
     {
         return new DefinitionCollection([
-            new \Ixocreate\Entity\Entity\Definition('id', UuidType::class, false, true),
-            new \Ixocreate\Entity\Entity\Definition('name', TypeInterface::TYPE_STRING, false, true),
-            new \Ixocreate\Entity\Entity\Definition('catalogue', TypeInterface::TYPE_STRING, false, true),
-            new \Ixocreate\Entity\Entity\Definition('files', TypeInterface::TYPE_ARRAY, false, true),
-            new \Ixocreate\Entity\Entity\Definition('placeholders', TypeInterface::TYPE_ARRAY, false, true),
+            new \Ixocreate\Entity\Definition('id', UuidType::class, false, true),
+            new \Ixocreate\Entity\Definition('name', TypeInterface::TYPE_STRING, false, true),
+            new \Ixocreate\Entity\Definition('catalogue', TypeInterface::TYPE_STRING, false, true),
+            new \Ixocreate\Entity\Definition('files', TypeInterface::TYPE_ARRAY, false, true),
+            new \Ixocreate\Entity\Definition('placeholders', TypeInterface::TYPE_ARRAY, false, true),
         ]);
     }
 

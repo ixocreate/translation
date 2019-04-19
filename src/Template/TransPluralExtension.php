@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 namespace Ixocreate\Translation\Template;
 
-use Ixocreate\Contract\Template\ExtensionInterface;
+use Ixocreate\Template\Extension\ExtensionInterface;
 use Ixocreate\Translation\Translator\Translator;
 
 final class TransPluralExtension implements ExtensionInterface
@@ -21,6 +21,7 @@ final class TransPluralExtension implements ExtensionInterface
 
     /**
      * TranslateExtension constructor.
+     *
      * @param Translator $translator
      */
     public function __construct(Translator $translator)
@@ -44,8 +45,13 @@ final class TransPluralExtension implements ExtensionInterface
      * @param null|string $locale
      * @return string
      */
-    public function __invoke(string $name, int $number, array $parameters = [], ?string $catalogue = null, ?string $locale = null)
-    {
+    public function __invoke(
+        string $name,
+        int $number,
+        array $parameters = [],
+        ?string $catalogue = null,
+        ?string $locale = null
+    ) {
         return $this->translator->transPlural($name, $number, $parameters, $catalogue, $locale);
     }
 }

@@ -40,12 +40,16 @@ final class IndexAction implements MiddlewareInterface
 
     /**
      * CatalogueIndexAction constructor.
+     *
      * @param DefinitionRepository $definitionRepository
      * @param TranslationRepository $translationRepository
      * @param LocaleManager $localeManager
      */
-    public function __construct(DefinitionRepository $definitionRepository, TranslationRepository $translationRepository, LocaleManager $localeManager)
-    {
+    public function __construct(
+        DefinitionRepository $definitionRepository,
+        TranslationRepository $translationRepository,
+        LocaleManager $localeManager
+    ) {
         $this->definitionRepository = $definitionRepository;
         $this->localeManager = $localeManager;
         $this->translationRepository = $translationRepository;
@@ -61,11 +65,11 @@ final class IndexAction implements MiddlewareInterface
         $limit = 25;
 
         if (!empty($request->getQueryParams()['limit']) && \is_scalar($request->getQueryParams()['limit'])) {
-            $limit = (int) $request->getQueryParams()['limit'];
+            $limit = (int)$request->getQueryParams()['limit'];
         }
 
         if (!empty($request->getQueryParams()['offset']) && \is_scalar($request->getQueryParams()['offset'])) {
-            $offset = (int) $request->getQueryParams()['offset'];
+            $offset = (int)$request->getQueryParams()['offset'];
         }
 
         if ($limit > 500 || empty($limit)) {
@@ -95,7 +99,7 @@ final class IndexAction implements MiddlewareInterface
                 ];
             }
 
-            $data[(string) $definition->id()] = [
+            $data[(string)$definition->id()] = [
                 'id' => $definition->id(),
                 'name' => $definition->name(),
                 'locales' => $intl,
@@ -105,15 +109,18 @@ final class IndexAction implements MiddlewareInterface
         $result = $this->translationRepository->findBy(['definitionId' => \array_keys($data)]);
         /** @var Translation $translation */
         foreach ($result as $translation) {
-            if (!\array_key_exists((string) $translation->definitionId(), $data)) {
+            if (!\array_key_exists((string)$translation->definitionId(), $data)) {
                 continue;
             }
 
-            if (!\array_key_exists((string) $translation->locale(), $data[(string) $translation->definitionId()]['locales'])) {
+            if (!\array_key_exists(
+                (string)$translation->locale(),
+                $data[(string)$translation->definitionId()]['locales']
+            )) {
                 continue;
             }
 
-            $data[(string) $translation->definitionId()]['locales'][$translation->locale()]['translated'] = (!empty($translation->message()));
+            $data[(string)$translation->definitionId()]['locales'][$translation->locale()]['translated'] = (!empty($translation->message()));
         }
 
 

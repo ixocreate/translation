@@ -9,8 +9,8 @@ declare(strict_types=1);
 
 namespace Ixocreate\Translation\Console;
 
-use Ixocreate\Contract\Command\CommandInterface;
-use Ixocreate\Entity\Entity\EntityCollection;
+use Ixocreate\Application\Console\CommandInterface;
+use Ixocreate\Entity\EntityCollection;
 use Ixocreate\Translation\Config\Config;
 use Ixocreate\Translation\Entity\Definition;
 use Ixocreate\Translation\Extractor\Collector;
@@ -50,12 +50,15 @@ final class PrepareCommand extends Command implements CommandInterface
 
         $definitionCollection = $this->definitionRepository->findAll();
         $definitionCollection = new EntityCollection($definitionCollection, function (Definition $definition) {
-            return (string) $definition->id();
+            return (string)$definition->id();
         });
 
         foreach ($collector as $catalogueData) {
             foreach ($catalogueData['translations'] as $translationData) {
-                $checkCollection = $definitionCollection->filter(function (Definition $definition) use ($catalogueData, $translationData) {
+                $checkCollection = $definitionCollection->filter(function (Definition $definition) use (
+                    $catalogueData,
+                    $translationData
+                ) {
                     return $definition->catalogue() === $catalogueData['name'] && $definition->name() === $translationData['name'];
                 });
 

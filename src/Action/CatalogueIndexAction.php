@@ -34,6 +34,7 @@ final class CatalogueIndexAction implements MiddlewareInterface
 
     /**
      * CatalogueIndexAction constructor.
+     *
      * @param DefinitionRepository $definitionRepository
      * @param LocaleManager $localeManager
      */
@@ -58,7 +59,7 @@ final class CatalogueIndexAction implements MiddlewareInterface
         $catalogue = [];
         $result = $queryBuilder->getQuery()->getResult();
         foreach ($result as $item) {
-            $count = (int) $item['count'];
+            $count = (int)$item['count'];
             if (empty($count)) {
                 continue;
             }
@@ -89,7 +90,7 @@ final class CatalogueIndexAction implements MiddlewareInterface
                     continue;
                 }
 
-                $intl[$catalogueItem['locale']]['count'] = (int) $catalogueItem['count'];
+                $intl[$catalogueItem['locale']]['count'] = (int)$catalogueItem['count'];
             }
 
             $catalogue[] = [

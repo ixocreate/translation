@@ -9,10 +9,10 @@ declare(strict_types=1);
 
 namespace Ixocreate\Translation\Translator\Factory;
 
-use Ixocreate\Contract\ServiceManager\FactoryInterface;
-use Ixocreate\Contract\ServiceManager\ServiceManagerInterface;
 use Ixocreate\Database\Repository\Factory\RepositorySubManager;
 use Ixocreate\Intl\LocaleManager;
+use Ixocreate\ServiceManager\FactoryInterface;
+use Ixocreate\ServiceManager\ServiceManagerInterface;
 use Ixocreate\Translation\Config\Config;
 use Ixocreate\Translation\Repository\TranslationRepository;
 use Ixocreate\Translation\Translator\Loader\DatabaseLoader;
@@ -35,7 +35,10 @@ final class TranslatorFactory implements FactoryInterface
         $translationConfig = $container->get(Config::class);
 
         $translator = new \Symfony\Component\Translation\Translator($localeManager->defaultLocale());
-        $translator->addLoader('database', new DatabaseLoader($container->get(RepositorySubManager::class)->get(TranslationRepository::class)));
+        $translator->addLoader(
+            'database',
+            new DatabaseLoader($container->get(RepositorySubManager::class)->get(TranslationRepository::class))
+        );
         foreach ($localeManager->all() as $info) {
             $translator->addResource('database', 'database', $info['locale'], $translationConfig->defaultCatalogue());
         }

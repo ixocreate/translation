@@ -9,7 +9,8 @@ declare(strict_types=1);
 
 namespace Ixocreate\Translation\Config;
 
-use Ixocreate\Contract\Application\SerializableServiceInterface;
+use Ixocreate\Application\Service\SerializableServiceInterface;
+use Ixocreate\Translation\TranslationConfigurator;
 
 final class Config implements SerializableServiceInterface
 {
@@ -19,7 +20,7 @@ final class Config implements SerializableServiceInterface
 
     private $defaultCatalogue = "";
 
-    public function __construct(Configurator $configurator)
+    public function __construct(TranslationConfigurator $configurator)
     {
         $this->extractTarget = $configurator->extractTarget();
         $this->defaultCatalogue = $configurator->defaultCatalogue();

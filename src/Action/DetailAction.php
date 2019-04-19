@@ -39,12 +39,16 @@ final class DetailAction implements MiddlewareInterface
 
     /**
      * CatalogueIndexAction constructor.
+     *
      * @param DefinitionRepository $definitionRepository
      * @param TranslationRepository $translationRepository
      * @param LocaleManager $localeManager
      */
-    public function __construct(DefinitionRepository $definitionRepository, TranslationRepository $translationRepository, LocaleManager $localeManager)
-    {
+    public function __construct(
+        DefinitionRepository $definitionRepository,
+        TranslationRepository $translationRepository,
+        LocaleManager $localeManager
+    ) {
         $this->definitionRepository = $definitionRepository;
         $this->localeManager = $localeManager;
         $this->translationRepository = $translationRepository;
@@ -74,7 +78,7 @@ final class DetailAction implements MiddlewareInterface
         }
 
         $detail = [
-            'id' => (string) $definition->id(),
+            'id' => (string)$definition->id(),
             'placeholders' => $definition->placeholders(),
             'files' => $definition->files(),
             'name' => $definition->name(),
@@ -85,12 +89,12 @@ final class DetailAction implements MiddlewareInterface
 
         /** @var Translation $translation */
         foreach ($result as $translation) {
-            if (!\array_key_exists((string) $translation->locale(), $detail['locales'])) {
+            if (!\array_key_exists((string)$translation->locale(), $detail['locales'])) {
                 continue;
             }
 
-            $detail['locales'][$translation->locale()]['id'] = (string) $translation->id();
-            $detail['locales'][$translation->locale()]['message'] = (string) $translation->message();
+            $detail['locales'][$translation->locale()]['id'] = (string)$translation->id();
+            $detail['locales'][$translation->locale()]['message'] = (string)$translation->message();
         }
 
 

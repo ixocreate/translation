@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 namespace Ixocreate\Translation\Template;
 
-use Ixocreate\Contract\Template\ExtensionInterface;
+use Ixocreate\Template\Extension\ExtensionInterface;
 use Ixocreate\Translation\Translator\Translator;
 
 final class TransExtension implements ExtensionInterface
@@ -21,6 +21,7 @@ final class TransExtension implements ExtensionInterface
 
     /**
      * TranslateExtension constructor.
+     *
      * @param Translator $translator
      */
     public function __construct(Translator $translator)
