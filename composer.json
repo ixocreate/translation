@@ -14,6 +14,8 @@
         "php": "^7.1",
         "ext-json": "*",
         "ixocreate/application": "^0.1",
+        "ixocreate/database-package": "^0.1",
+        "ixocreate/template-package": "^0.1",
         "symfony/translation": "^4.1",
         "nikic/php-parser": "^4.0"
     },
