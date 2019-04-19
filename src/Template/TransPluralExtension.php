@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 namespace Ixocreate\Translation\Template;
 
-use Ixocreate\Template\ExtensionInterface;
+use Ixocreate\Template\Extension\ExtensionInterface;
 use Ixocreate\Translation\Translator\Translator;
 
 final class TransPluralExtension implements ExtensionInterface
