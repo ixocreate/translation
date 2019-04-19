@@ -13,7 +13,7 @@
     "require": {
         "php": "^7.1",
         "ext-json": "*",
-        "ixocreate/application": "dev-consolidate",
+        "ixocreate/application": "dev-develop",
         "symfony/translation": "^4.1",
         "nikic/php-parser": "^4.0"
     },
