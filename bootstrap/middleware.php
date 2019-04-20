@@ -12,5 +12,4 @@ namespace Ixocreate\Admin;
 use Ixocreate\Application\Http\Middleware\MiddlewareConfigurator;
 
 /** @var MiddlewareConfigurator $middleware */
-
 $middleware->addDirectory(__DIR__ . '/../src/Action', true);

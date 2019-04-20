@@ -14,6 +14,5 @@ use Ixocreate\Translation\Repository\DefinitionRepository;
 use Ixocreate\Translation\Repository\TranslationRepository;
 
 /** @var RepositoryConfigurator $repository */
-
 $repository->addRepository(DefinitionRepository::class);
 $repository->addRepository(TranslationRepository::class);

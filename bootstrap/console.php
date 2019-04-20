@@ -14,6 +14,5 @@ use Ixocreate\Translation\Console\ExtractCommand;
 use Ixocreate\Translation\Console\PrepareCommand;
 
 /** @var ConsoleConfigurator $console */
-
 $console->addCommand(ExtractCommand::class);
 $console->addCommand(PrepareCommand::class);
