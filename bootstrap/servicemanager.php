@@ -14,5 +14,4 @@ use Ixocreate\Translation\Translator\Factory\TranslatorFactory;
 use Ixocreate\Translation\Translator\Translator;
 
 /** @var ServiceManagerConfigurator $serviceManager */
-
 $serviceManager->addFactory(Translator::class, TranslatorFactory::class);

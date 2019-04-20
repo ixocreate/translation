@@ -18,7 +18,6 @@ use Ixocreate\Translation\Action\IndexAction;
 use Ixocreate\Translation\Action\SaveAction;
 
 /** @var PipeConfigurator $pipe */
-
 $pipe->segmentPipe(AdminConfig::class)(function (PipeConfigurator $pipe) {
     $pipe->segment('/api')(function (PipeConfigurator $pipe) {
         $pipe->group("admin.authorized")(function (GroupPipeConfigurator $group) {
