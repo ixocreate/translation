@@ -8,13 +8,11 @@
             "name": "IXOCREATE"
         }
     ],
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "require": {
         "php": "^7.1",
         "ext-json": "*",
         "ixocreate/application": "^0.1",
-        "ixocreate/admin-package": "^0.1",
+        "ixocreate/admin-package": "^0.2",
         "symfony/translation": "^4.1",
         "nikic/php-parser": "^4.0"
     },
@@ -33,6 +31,9 @@
             "Ixocreate\\Test\\Translation\\": "tests/src/",
             "Ixocreate\\Misc\\Translation\\": "tests/misc/"
         }
+    },
+    "config": {
+        "sort-packages": true
     },
     "scripts": {
         "fix-cs": "vendor/friendsofphp/php-cs-fixer/php-cs-fixer fix --config vendor/ixocreate/coding-standard/.php_cs"
