@@ -15,8 +15,8 @@ use Ixocreate\Database\DatabaseEntityInterface;
 use Ixocreate\Entity\DefinitionCollection;
 use Ixocreate\Entity\EntityInterface;
 use Ixocreate\Entity\EntityTrait;
-use Ixocreate\Type\Entity\UuidType;
-use Ixocreate\Type\TypeInterface;
+use Ixocreate\Schema\Type\TypeInterface;
+use Ixocreate\Schema\Type\UuidType;
 
 final class Definition implements EntityInterface, DatabaseEntityInterface
 {
