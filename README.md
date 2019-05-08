@@ -1,7 +1,7 @@
 # IXOCREATE Translation Package
 
 [![Build Status](https://travis-ci.com/ixocreate/translation-package.svg?branch=master)](https://travis-ci.com/ixocreate/translation-package)
-[![Coverage Status](https://coveralls.io/repos/github/ixocreate/translation-package/badge.svg?branch=develop)](https://coveralls.io/github/ixocreate/translation-package?branch=develop)
+[![Coverage Status](https://coveralls.io/repos/github/ixocreate/translation-package/badge.svg?branch=master)](https://coveralls.io/github/ixocreate/translation-package?branch=master)
 [![Packagist](https://img.shields.io/packagist/v/ixocreate/translation-package.svg)](https://packagist.org/packages/ixocreate/translation-package)
 [![PHP Version](https://img.shields.io/packagist/php-v/ixocreate/translation-package.svg)](https://packagist.org/packages/ixocreate/translation-package)
 [![License](https://img.shields.io/github/license/ixocreate/translation-package.svg)](LICENSE)
