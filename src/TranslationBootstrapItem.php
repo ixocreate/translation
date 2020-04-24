@@ -11,6 +11,7 @@ namespace Ixocreate\Translation;
 
 use Ixocreate\Application\Bootstrap\BootstrapItemInterface;
 use Ixocreate\Application\Configurator\ConfiguratorInterface;
+use Ixocreate\Translation\Config\TranslationConfigurator;
 
 final class TranslationBootstrapItem implements BootstrapItemInterface
 {

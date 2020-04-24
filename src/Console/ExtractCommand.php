@@ -10,7 +10,7 @@ declare(strict_types=1);
 namespace Ixocreate\Translation\Console;
 
 use Ixocreate\Application\Console\CommandInterface;
-use Ixocreate\Translation\Config\Config;
+use Ixocreate\Translation\Config\TranslationConfig;
 use Ixocreate\Translation\Extractor\Extractor;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -19,11 +19,11 @@ use Symfony\Component\Console\Output\OutputInterface;
 final class ExtractCommand extends Command implements CommandInterface
 {
     /**
-     * @var Config
+     * @var TranslationConfig
      */
     private $config;
 
-    public function __construct(Config $config)
+    public function __construct(TranslationConfig $config)
     {
         parent::__construct(self::getCommandName());
         $this->config = $config;

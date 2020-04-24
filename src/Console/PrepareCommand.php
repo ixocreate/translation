@@ -11,7 +11,7 @@ namespace Ixocreate\Translation\Console;
 
 use Ixocreate\Application\Console\CommandInterface;
 use Ixocreate\Entity\EntityCollection;
-use Ixocreate\Translation\Config\Config;
+use Ixocreate\Translation\Config\TranslationConfig;
 use Ixocreate\Translation\Entity\Definition;
 use Ixocreate\Translation\Extractor\Collector;
 use Ixocreate\Translation\Repository\DefinitionRepository;
@@ -23,7 +23,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 final class PrepareCommand extends Command implements CommandInterface
 {
     /**
-     * @var Config
+     * @var TranslationConfig
      */
     private $config;
 
@@ -32,7 +32,7 @@ final class PrepareCommand extends Command implements CommandInterface
      */
     private $definitionRepository;
 
-    public function __construct(Config $config, DefinitionRepository $definitionRepository)
+    public function __construct(TranslationConfig $config, DefinitionRepository $definitionRepository)
     {
         parent::__construct(self::getCommandName());
         $this->config = $config;

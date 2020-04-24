@@ -7,19 +7,18 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Translation;
+namespace Ixocreate\Translation\Config;
 
 use Ixocreate\Application\Configurator\ConfiguratorInterface;
 use Ixocreate\Application\Service\ServiceRegistryInterface;
-use Ixocreate\Translation\Config\Config;
 
 final class TranslationConfigurator implements ConfiguratorInterface
 {
     private $extractDirectories = [];
 
-    private $extractTarget = "";
+    private $extractTarget = '';
 
-    private $defaultCatalogue = "";
+    private $defaultCatalogue = '';
 
     /**
      * @param string $directory
@@ -75,6 +74,6 @@ final class TranslationConfigurator implements ConfiguratorInterface
      */
     public function registerService(ServiceRegistryInterface $serviceRegistry): void
     {
-        $serviceRegistry->add(Config::class, new Config($this));
+        $serviceRegistry->add(TranslationConfig::class, new TranslationConfig($this));
     }
 }

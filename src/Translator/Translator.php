@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 namespace Ixocreate\Translation\Translator;
 
-use Ixocreate\Translation\Config\Config;
+use Ixocreate\Translation\Config\TranslationConfig;
 
 final class Translator
 {
@@ -19,7 +19,7 @@ final class Translator
     private $translator;
 
     /**
-     * @var Config
+     * @var TranslationConfig
      */
     private $config;
 
@@ -27,9 +27,9 @@ final class Translator
      * Translator constructor.
      *
      * @param \Symfony\Component\Translation\Translator $translator
-     * @param Config $config
+     * @param TranslationConfig $config
      */
-    public function __construct(\Symfony\Component\Translation\Translator $translator, Config $config)
+    public function __construct(\Symfony\Component\Translation\Translator $translator, TranslationConfig $config)
     {
         $this->translator = $translator;
         $this->config = $config;

@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 namespace Ixocreate\Translation\Extractor;
 
-use Ixocreate\Translation\Config\Config;
+use Ixocreate\Translation\Config\TranslationConfig;
 use PhpParser\Node;
 use PhpParser\Node\Expr\MethodCall as MethodCallNode;
 use PhpParser\NodeVisitorAbstract;
@@ -27,7 +27,7 @@ final class Visitor extends NodeVisitorAbstract
     private $file;
 
     /**
-     * @var Config
+     * @var TranslationConfig
      */
     private $config;
 
@@ -36,9 +36,9 @@ final class Visitor extends NodeVisitorAbstract
      *
      * @param Collector $collector
      * @param string $file
-     * @param Config $config
+     * @param TranslationConfig $config
      */
-    public function __construct(Collector $collector, string $file, Config $config)
+    public function __construct(Collector $collector, string $file, TranslationConfig $config)
     {
         $this->collector = $collector;
         $this->file = $file;

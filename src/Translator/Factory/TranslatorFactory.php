@@ -13,7 +13,7 @@ use Ixocreate\Database\Repository\Factory\RepositorySubManager;
 use Ixocreate\Intl\LocaleManager;
 use Ixocreate\ServiceManager\FactoryInterface;
 use Ixocreate\ServiceManager\ServiceManagerInterface;
-use Ixocreate\Translation\Config\Config;
+use Ixocreate\Translation\Config\TranslationConfig;
 use Ixocreate\Translation\Repository\TranslationRepository;
 use Ixocreate\Translation\Translator\Loader\DatabaseLoader;
 use Ixocreate\Translation\Translator\Translator;
@@ -31,8 +31,8 @@ final class TranslatorFactory implements FactoryInterface
         /** @var LocaleManager $localeManager */
         $localeManager = $container->get(LocaleManager::class);
 
-        /** @var Config $translationConfig */
-        $translationConfig = $container->get(Config::class);
+        /** @var TranslationConfig $translationConfig */
+        $translationConfig = $container->get(TranslationConfig::class);
 
         $translator = new \Symfony\Component\Translation\Translator($localeManager->defaultLocale());
         $translator->addLoader(

@@ -10,15 +10,23 @@ declare(strict_types=1);
 namespace Ixocreate\Translation\Config;
 
 use Ixocreate\Application\Service\SerializableServiceInterface;
-use Ixocreate\Translation\TranslationConfigurator;
 
-final class Config implements SerializableServiceInterface
+final class TranslationConfig implements SerializableServiceInterface
 {
-    private $extractDirectories = [];
+    /**
+     * @var array
+     */
+    private $extractDirectories;
 
-    private $extractTarget = "";
+    /**
+     * @var string
+     */
+    private $extractTarget;
 
-    private $defaultCatalogue = "";
+    /**
+     * @var string
+     */
+    private $defaultCatalogue;
 
     public function __construct(TranslationConfigurator $configurator)
     {
@@ -35,11 +43,17 @@ final class Config implements SerializableServiceInterface
         return $this->extractDirectories;
     }
 
+    /**
+     * @return string
+     */
     public function extractTarget(): string
     {
         return $this->extractTarget;
     }
 
+    /**
+     * @return string
+     */
     public function defaultCatalogue(): string
     {
         return $this->defaultCatalogue;

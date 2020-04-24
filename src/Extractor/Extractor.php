@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 namespace Ixocreate\Translation\Extractor;
 
-use Ixocreate\Translation\Config\Config;
+use Ixocreate\Translation\Config\TranslationConfig;
 use PhpParser\Error;
 use PhpParser\NodeTraverser;
 use PhpParser\ParserFactory;
@@ -19,11 +19,11 @@ use Symfony\Component\Finder\SplFileInfo;
 final class Extractor
 {
     /**
-     * @param Config $config
+     * @param TranslationConfig $config
      * @param array $files
      * @return Collector
      */
-    public function extract(Config $config, array $files): Collector
+    public function extract(TranslationConfig $config, array $files): Collector
     {
         $collector = new Collector();
 
