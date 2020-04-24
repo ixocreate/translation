@@ -16,8 +16,9 @@
         "ext-json": "*",
         "ixocreate/application": "^0.2",
         "ixocreate/admin-package": "^0.3",
-        "symfony/translation": "^4.1",
-        "nikic/php-parser": "^4.0"
+        "symfony/finder": "^5.0",
+        "symfony/translation": "^4.4",
+        "nikic/php-parser": "^4.4"
     },
     "require-dev": {
         "ixocreate/coding-standard": "^2.0",
