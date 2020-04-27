@@ -4,7 +4,7 @@
 
 ## [v0.3.1 (2020-04-24)](https://github.com/ixocreate/translation-package/compare/0.3.0...0.3.1)
 ### Fixed
-- Add missing dependecy
+- Add missing dependency
 
 ## [v0.3.0 (2019-05-06)](https://github.com/ixocreate/translation-package/compare/0.2.0...0.3.0)
 ### Changed
