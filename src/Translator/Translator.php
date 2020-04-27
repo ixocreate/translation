@@ -82,6 +82,8 @@ final class Translator
             $locale = \Locale::getDefault();
         }
 
-        return $this->translator->transChoice($name, $number, $parameters, $catalogue, $locale);
+        $parameters['count'] = $number;
+
+        return $this->translator->trans($name, $parameters, $catalogue, $locale);
     }
 }
