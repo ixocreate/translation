@@ -11,18 +11,20 @@
             "role": "Developer"
         }
     ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
-        "php": "^7.1",
+        "php": "^7.2 || ^8.0",
         "ext-json": "*",
-        "ixocreate/application": "^0.2",
-        "ixocreate/admin-package": "^0.3",
-        "symfony/finder": "^4.4",
-        "symfony/translation": "^4.4",
+        "ixocreate/application": "dev-develop",
+        "ixocreate/admin-package": "dev-develop",
+        "symfony/finder": "^5.2",
+        "symfony/translation": "^5.2",
         "nikic/php-parser": "^4.4"
     },
     "require-dev": {
         "ixocreate/coding-standard": "^2.0",
-        "ixocreate/test": "dev-develop"
+        "ixocreate/test": "^0.1"
     },
     "autoload": {
         "psr-4": {

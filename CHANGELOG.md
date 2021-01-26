@@ -1,6 +1,10 @@
 # Release Notes
 
-## [Unreleased](https://github.com/ixocreate/translation-package/compare/0.3.0...develop)
+## [Unreleased](https://github.com/ixocreate/translation-package/compare/0.4.0...develop)
+
+## [v0.4.0 (2021-01-26)](https://github.com/ixocreate/translation-package/compare/0.3.1...0.4.0)
+### Fixed
+- Upgrade to Application 0.3
 
 ## [v0.3.1 (2020-04-24)](https://github.com/ixocreate/translation-package/compare/0.3.0...0.3.1)
 ### Fixed
