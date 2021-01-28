@@ -43,7 +43,7 @@ final class PrepareCommand extends Command implements CommandInterface
     {
         if (!\file_exists($this->config->extractTarget())) {
             $output->writeln(\sprintf("File '%s' doesn't exists - nothing to do", $this->config->extractTarget()));
-            return;
+            return 1;
         }
 
         $collector = Collector::fromJson(\json_decode(\file_get_contents($this->config->extractTarget()), true));
@@ -105,6 +105,8 @@ final class PrepareCommand extends Command implements CommandInterface
             $output->writeln(\sprintf("Deleted definition for translation '%s'", $definition->id()));
             $this->definitionRepository->remove($definition);
         }
+
+        return 0;
     }
 
     public static function getCommandName()

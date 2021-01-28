@@ -42,6 +42,8 @@ final class ExtractCommand extends Command implements CommandInterface
         }
 
         \file_put_contents($this->config->extractTarget(), \json_encode($collector), LOCK_EX);
+
+        return 0;
     }
 
     public static function getCommandName()
