@@ -10,7 +10,6 @@ declare(strict_types=1);
 namespace Ixocreate\Translation\Console;
 
 use Ixocreate\Application\Console\CommandInterface;
-use Ixocreate\Entity\EntityCollection;
 use Ixocreate\Translation\Config\TranslationConfig;
 use Ixocreate\Translation\Entity\Definition;
 use Ixocreate\Translation\Extractor\Collector;
@@ -48,21 +47,17 @@ final class PrepareCommand extends Command implements CommandInterface
 
         $collector = Collector::fromJson(\json_decode(\file_get_contents($this->config->extractTarget()), true));
 
-        $definitionCollection = $this->definitionRepository->findAll();
-        $definitionCollection = new EntityCollection($definitionCollection, function (Definition $definition) {
-            return (string)$definition->id();
-        });
+        $knownDefinitions = [];
+        foreach ($this->definitionRepository->findAll() as $definition) {
+            /** @var Definition $definition */
+            $knownDefinitions[$definition->catalogue()][$definition->name()] = $definition;
+        }
 
         foreach ($collector as $catalogueData) {
             foreach ($catalogueData['translations'] as $translationData) {
-                $checkCollection = $definitionCollection->filter(function (Definition $definition) use (
-                    $catalogueData,
-                    $translationData
-                ) {
-                    return $definition->catalogue() === $catalogueData['name'] && $definition->name() === $translationData['name'];
-                });
+                $definition = $knownDefinitions[$catalogueData['name']][$translationData['name']] ?? null;
 
-                if ($checkCollection->count() !== 1) {
+                if ($definition === null) {
                     $definition = new Definition([
                         'id' => Uuid::uuid4()->toString(),
                         'name' => $translationData['name'],
@@ -75,8 +70,6 @@ final class PrepareCommand extends Command implements CommandInterface
                     $output->writeln(\sprintf("Insert definition for translation '%s'", $translationData['name']));
                     continue;
                 }
-
-                $definition = $checkCollection->first();
 
                 $update = false;
 
@@ -95,15 +88,15 @@ final class PrepareCommand extends Command implements CommandInterface
                     $output->writeln(\sprintf("Updated definition for translation '%s'", $translationData['name']));
                 }
 
-                $definitionCollection = $definitionCollection->filter(function (Definition $def) use ($definition) {
-                    return $def->id() !== $definition->id();
-                });
+                unset($knownDefinitions[$catalogueData['name']][$translationData['name']]);
             }
         }
 
-        foreach ($definitionCollection as $definition) {
-            $output->writeln(\sprintf("Deleted definition for translation '%s'", $definition->id()));
-            $this->definitionRepository->remove($definition);
+        foreach ($knownDefinitions as $catalogue) {
+            foreach ($catalogue as $definition) {
+                $output->writeln(\sprintf("Deleted definition for translation '%s'", $definition->id()));
+                $this->definitionRepository->remove($definition);
+            }
         }
 
         return 0;
