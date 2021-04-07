@@ -34,6 +34,7 @@ final class PrepareCommand extends Command implements CommandInterface
     public function __construct(TranslationConfig $config, DefinitionRepository $definitionRepository)
     {
         parent::__construct(self::getCommandName());
+        $this->setDescription('update translation tables from extracted definition');
         $this->config = $config;
         $this->definitionRepository = $definitionRepository;
     }

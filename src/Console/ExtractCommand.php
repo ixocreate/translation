@@ -26,6 +26,7 @@ final class ExtractCommand extends Command implements CommandInterface
     public function __construct(TranslationConfig $config)
     {
         parent::__construct(self::getCommandName());
+        $this->setDescription('extracts translations from templates and stores them for deployment');
         $this->config = $config;
     }
 
